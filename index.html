@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labhanshu Vyas - Product Manager Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlalDLrAzCgQxsqwJ9C02dFjRzC/oH5lU4lF6f2M9iB2rJ6t+4cQf1x3R2i2fM8E/V9p3/8V8+5x+6Ww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Apply Lora font for body text, Playfair Display for headings */
+        body {
+            font-family: 'Lora', serif; /* Cambria equivalent for body text */
+            background-color: #FBF8F0; /* Very light beige, default if no section background */
+            color: #3D3B40; /* Dark charcoal for primary text */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif; /* Caslon #540 equivalent for headings */
+        }
+        /* Custom scroll behavior for smooth navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style for active navigation links (optional, can be added with JS) */
+        .nav-link.active {
+            font-weight: 600; /* Semi-bold */
+            color: #1A1A1A; /* Black */
+        }
+        /* Base section padding for consistent look */
+        section {
+            padding: 4rem 1rem; /* Top/bottom padding, left/right 1rem */
+        }
+        @media (min-width: 768px) {
+            section {
+                padding: 6rem 2rem; /* More padding on larger screens */
+            }
+        }
+        /* Custom card styling for general use (not for case studies or redesigned sections) */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+            padding: 2rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #E0E0E0;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.08), 0 3px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+        /* Custom button style for minimalist aesthetic */
+        .minimal-button {
+            display: inline-block;
+            background-color: #1A1A1A; /* Black */
+            color: #FFFFFF; /* White text */
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            border: 1px solid #1A1A1A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .minimal-button:hover {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+        }
+
+        /* Specific style for "Explore Portfolio" button on Home page */
+        .home-explore-button {
+            display: inline-flex; /* Use flex to align text and icon */
+            align-items: center; /* Center items vertically */
+            background-color: #1A1A1A; /* Black background */
+            color: #FFFFFF; /* White text */
+            font-weight: 500;
+            padding: 0.75rem 2rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            border: 1px solid #1A1A1A;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .home-explore-button:hover {
+            background-color: #3D3B40; /* Darker charcoal on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        .home-explore-button svg {
+            margin-left: 0.75rem; /* Space between text and icon */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .home-explore-button:hover svg {
+            transform: translateX(3px); /* Slide arrow on hover */
+        }
+
+        /* Case Study "Read More" button style (simple text link) */
+        .case-study-read-more {
+            display: inline-block;
+            color: #3D3B40; /* Dark charcoal text */
+            text-decoration: none; /* No default underline */
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+            font-family: 'Lora', serif; /* Ensure Lora font for "Read More" */
+            font-size: 0.875rem; /* Equivalent to text-sm */
+        }
+        .case-study-read-more:hover {
+            color: #1A1A1A; /* Black on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Styles for horizontal scrolling container */
+        .horizontal-scroll-container {
+            display: flex;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to items */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            padding-bottom: 1rem; /* Space for scrollbar */
+            gap: 2.5rem; /* Gap between items */
+            padding-left: 0rem; /* Removed extra left padding for full visibility */
+            padding-right: 0rem; /* Removed extra right padding */
+            width: 100%; /* Ensures it takes full width of its parent container */
+        }
+
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .horizontal-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .horizontal-scroll-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Styling for individual case study items (transparent, no outlined box) */
+        .case-study-item {
+            flex: 0 0 auto; /* Prevent items from shrinking */
+            width: 14rem; /* Fixed width for images */
+            scroll-snap-align: start; /* Snap alignment for scrolling */
+            background-color: transparent; /* Make background transparent */
+            padding: 0; /* Remove padding */
+            text-align: center;
+        }
+
+        .case-study-item img {
+            width: 100%; /* Make image fill its container width */
+            height: 20rem; /* Fixed height for images */
+            object-fit: cover; /* Cover the area, cropping if necessary */
+            margin-bottom: 1rem; /* Add margin below image to separate from text */
+            border-radius: 0.5rem; /* Slightly rounded corners for images */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for images */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition for hover effect */
+        }
+
+        .case-study-item img:hover {
+            transform: scale(1.03); /* Subtle zoom effect on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow on hover */
+        }
+
+        .case-study-item h3 {
+            margin-bottom: 0.5rem; /* Space below title */
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh; /* Max height to allow scrolling within modal */
+            overflow-y: auto; /* Enable vertical scrolling for content */
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .modal-content h4 { /* Styling for subheadings in modal content */
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        .modal-content h4 i { /* Icon styling within modal subheadings */
+            font-size: 1.25rem; /* Same as text for alignment */
+            color: #A0522D; /* Earthy brown for icons */
+            margin-right: 0.5rem;
+        }
+        .modal-content p, .modal-content ul, .modal-content table { /* General text, lists, table in modal */
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #3D3B40;
+            margin-bottom: 1rem;
+        }
+        .modal-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+        .modal-content ul ul { /* Nested lists */
+            list-style: circle;
+            padding-left: 1.25rem;
+        }
+        .modal-content strong {
+            font-weight: 700;
+            color: #1A1A1A;
+        }
+        .modal-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        .modal-content th, .modal-content td {
+            border: 1px solid #e0e0e0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .modal-content th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: #1A1A1A;
+        }
+
+
+        .modal-close-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #3D3B40;
+        }
+
+        /* New styles for My Work section layout */
+        .my-work-item {
+            background-color: #ffffff; /* White background */
+            padding: 2rem;
+            margin-bottom: 1.5rem; /* Spacing between items */
+            border-left: 4px solid #1A1A1A; /* Black left border as a subtle design element */
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Very subtle shadow */
+            position: relative; /* Needed for absolute positioning of labels */
+        }
+
+        .my-work-item:last-child {
+            margin-bottom: 0; /* No margin after the last item */
+        }
+
+        .my-work-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .my-work-item ul {
+            list-style: none; /* Remove default list style */
+            padding-left: 0; /* Remove default padding */
+        }
+
+        .my-work-item ul li {
+            position: relative;
+            padding-left: 1.5rem; /* Space for custom bullet */
+            margin-bottom: 0.5rem;
+        }
+
+        .my-work-item ul li::before {
+            content: '\2022'; /* Unicode for a solid bullet point */
+            color: #3D3B40; /* Dark charcoal color for bullet */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* My Work Label Styling */
+        .work-label {
+            position: absolute;
+            top: -1rem; /* Adjusted downward */
+            left: -0.75rem; /* Maintained for left overlap */
+            background-color: #1A1A1A; /* Black background */
+            color: #FFFFFF; /* White text */
+            padding: 0.25rem 0.75rem; /* Smaller padding for a label */
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 600; /* semi-bold */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom-right-radius: 0.25rem; /* slight curve on bottom right */
+            z-index: 10; /* Ensure it's above other content */
+        }
+
+
+        /* New styles for About Me section layout */
+        #about {
+            background-color: #FFFFFF; /* Changed main section background to white */
+        }
+        .about-me-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-me-grid {
+                grid-template-columns: 2fr 1fr; /* Larger column for story, smaller for education/certs */
+            }
+        }
+
+        /* Stylish about-me blocks */
+        .about-me-story, .about-me-block {
+            background-color: #ffffff; /* White background */
+            padding: 2.5rem;
+            border-radius: 0.75rem; /* More rounded corners */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More prominent shadow */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: none; /* Remove border */
+        }
+
+        .about-me-block {
+            background-color: #FBF8F0; /* Updated to very light beige */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Slightly less prominent shadow for secondary */
+            padding: 1.25rem; /* Reduced padding for smaller vertical length */
+            /* Removed individual margin-bottom from .about-me-block, now controlled by gap */
+        }
+        .about-me-secondary-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; /* Approximately 16px, or about 1.6cm */
+        }
+
+
+        .about-me-story:hover, .about-me-block:hover {
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Increased shadow on hover */
+        }
+
+        /* Download CV button */
+        .download-cv-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #1A1A1A; /* Black for primary theme button */
+            color: #FFFFFF;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            margin-top: 1.5rem; /* Space above button */
+            border: 1px solid #1A1A1A; /* Add border for consistency */
+            text-transform: uppercase; /* Match other buttons */
+            letter-spacing: 0.05em; /* Match other buttons */
+        }
+        .download-cv-button:hover {
+            background-color: #3D3B40; /* Darker charcoal on hover */
+            transform: translateY(-2px);
+            color: #FFFFFF; /* Ensure text remains white on hover */
+        }
+        .download-cv-button svg {
+            margin-right: 0.5rem;
+        }
+
+
+        /* Case Studies Section - Solid Background & Alignment */
+        #case-studies {
+            background-color: #EEE8DF; /* Updated to a slightly warmer, light beige */
+            padding-top: 4rem; /* Top padding for content */
+            padding-bottom: 4rem; /* Bottom padding for content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for content within Case Studies section - provides consistent fixed width and centering */
+        #case-studies .container {
+             max-width: 72rem; /* Fixed layout width */
+             padding-left: 1rem; /* General section padding for smaller screens */
+             padding-right: 1rem; /* General section padding for smaller screens */
+        }
+        @media (min-width: 768px) {
+            #case-studies .container {
+                padding-left: 2rem; /* General section padding for larger screens */
+                padding-right: 2rem; /* General section padding for larger screens */
+            }
+        }
+
+        /* Why Me Section Styling */
+        #why-me {
+            background-color: #EEE8DF; /* Solid beige background */
+            color: #3D3B40;
+            padding: 6rem 1rem;
+            text-align: center;
+        }
+
+        #why-me .card {
+            background-color: #ffffff;
+            border: none; /* Remove border */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* More pronounced shadow */
+            border-radius: 1rem; /* More rounded */
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #why-me .card .fa-handshake-angle { /* Targeting the specific icon in Why Me section */
+            color: #1A1A1A; /* Changed icon color to black */
+            width: 80px; /* Reverted size */
+            height: 80px; /* Reverted size */
+            margin-bottom: 0; /* No margin-bottom on icon */
+            margin-top: -1rem; /* Pushed further up to create more space from top of box */
+        }
+
+        #why-me-text {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.75; /* leading-relaxed */
+            max-width: 800px; /* Max width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1rem; /* Adjusted margin-top to push text further from icon */
+        }
+
+        /* Home Section Styling */
+        #home {
+            background-color: #FFFFFF; /* Changed to white */
+            position: relative;
+            overflow: hidden; /* Hide overflow for animations */
+            padding-top: 6rem; /* Standard section padding */
+            padding-bottom: 6rem; /* Standard section padding */
+        }
+
+        #home::before {
+            content: none; /* Ensure no overlay */
+        }
+
+        #home .container {
+            position: relative;
+            z-index: 2; /* Ensure content is above overlay */
+            max-width: 72rem; /* Added max-width for fixed layout look */
+        }
+
+        #home .container img {
+            border: none !important; /* Ensure no border */
+            box-shadow: none !important; /* Ensure no shadow */
+        }
+
+        #home h1 {
+            font-size: 4.5rem; /* Larger hi */
+            font-weight: 700;
+            color: #1A1A1A;
+            animation: slideInLeft 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        #home h2 {
+            font-size: 3rem; /* Larger name */
+            color: #3D3B40;
+            animation: slideInLeft 1.2s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.2s;
+        }
+
+        #home p {
+            font-size: 1.25rem; /* Larger paragraph text */
+            color: #555555;
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        #home .home-explore-button {
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0;
+            animation-delay: 0.8s;
+        }
+
+        /* Keyframe Animations */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm py-4 fixed w-full z-10 top-0 border-b border-gray-100">
+        <nav class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <a href="#home" class="text-2xl font-bold text-gray-900 rounded-lg p-2 uppercase tracking-wide">PORTFOLIO</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">ABOUT ME</a></li>
+                <li><a href="#case-studies" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">CASE STUDIES</a></li>
+                <li><a href="#my-work" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">MY WORK</a></li>
+                <li><a href="#skills" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">SKILLS</a></li>
+                <li><a href="#why-me" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">WHY ME?</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu-overlay" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-20">
+            <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-6">
+                <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <ul class="flex flex-col space-y-4 mt-10">
+                    <li><a href="#about" class="mobile-nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 block py-2 uppercase text-sm tracking-wide">ABOUT ME</a></li>
+                    <li><a href="#case-studies" class="mobile-nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 block py-2 uppercase text-sm tracking-wide">CASE STUDIES</a></li>
+                    <li><a href="#my-work" class="mobile-nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 block py-2 uppercase text-sm tracking-wide">MY WORK</a></li>
+                    <li><a href="#skills" class="mobile-nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 block py-2 uppercase text-sm tracking-wide">SKILLS</a></li>
+                    <li><a href="#why-me" class="mobile-nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 block py-2 uppercase text-sm tracking-wide">WHY ME?</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <section id="home" class="text-gray-900 flex flex-col md:flex-row items-center justify-center py-16 px-4 text-center md:text-left bg-[#FFFFFF]"> <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl">
+                <div class="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
+                    <img src="https://storiesonboard.com/blog/wp-content/uploads/2022/09/remote-product-manager-1.png"
+                         onerror="this.onerror=null;this.src='https://placehold.co/256x256/FFFFFF/3D3B40?text=Product+Manager';"
+                         alt="Illustration of a product manager working at a desk with various digital interfaces"
+                         class="w-64 h-64 object-cover"> </div>
+                <div class="max-w-2xl text-left"> <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-2">
+                        Hi!
+                    </h1>
+                    <h2 class="text-3xl md:text-4xl font-normal mb-6">
+                        I'm Labhanshu Vyas
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8">
+                         A passionate and well‑rounded creator — an engineer, sports enthusiast, and lifelong learner — always looking for ways to connect ideas, people, and technology to build things that matter.
+                    </p>
+                    <a href="#about" class="home-explore-button"> Explore Portfolio
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-white py-16 px-4 border-t border-b border-gray-100">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">ABOUT ME</h2>
+
+                <div class="about-me-grid">
+                    <div class="about-me-story">
+                        <p id="about-me-text" class="text-gray-700 leading-relaxed text-left mb-4"> I’m someone who believes every experience is an opportunity to learn and grow. From leading a national‑level netball team to working on complex engineering projects, I’ve embraced challenges that shaped who I am today — a passionate and adaptable person with a strong sense of teamwork, discipline, and creativity.
+
+With a background in Information Technology, I’ve built a solid technical foundation in programming, data analysis, and project management. But beyond the code, I’ve always been driven by understanding people, tackling meaningful problems, and creating products that make a difference.
+
+Throughout my journey — be it as a student leading projects like a voice‑based chatbot or as an intern presenting results that improved production efficiency — I’ve learned the value of connecting ideas across disciplines. Helping teammates, sharing knowledge, and tackling tough questions have shaped me into a collaborative and resourceful problem‑solver.
+
+My interests range from sports and volunteering to case studies that explore user pain points, marketing strategies, and making technology more accessible for all. This diverse lens gives me a well‑rounded approach to life and work — one that blends technical precision with an understanding of people and an eagerness to create impactful, human‑centric products.
+                        </p>
+                        <div class="text-left mt-6"> <a href="https://drive.google.com/file/d/1i8TG8xVcwnR29absIWNe9p_F6oPqcMiB/view?usp=sharing" download class="download-cv-button">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Download CV
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-me-secondary-blocks">
+                        <div class="about-me-block">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-4">EDUCATION</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                                <li><strong>Bachelors of Technology in Information Technology</strong></li>
+                                <li>Chameli Devi Group of Institute (RGPV) University, 2020 – 2024</li>
+                                <li>CGPA – 8.28/10</li>
+                            </ul>
+                        </div>
+                        <div class="about-me-block"> <h3 class="2xl font-semibold text-gray-900 mb-4">CERTIFICATES</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2"> <li class="flex items-center"><i class="fas fa-award w-5 h-5 mr-2 text-gray-600"></i>Google Project Management: Professional Certificate</li>
+                                <li class="flex items-center"><i class="fas fa-cloud w-5 h-5 mr-2 text-gray-600"></i>AWS Academy Cloud Foundation</li> </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case-studies" class="py-16 px-0 md:px-0 bg-[#EEE8DF]"> <div class="container mx-auto px-4 mb-12 max-w-6xl">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12 uppercase tracking-wide text-center">CASE STUDIES</h2>
+            </div>
+
+            <div class="horizontal-scroll-container px-4 sm:px-6 md:px-8 lg:px-10"> <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="0"> <img src="https://tinuiti.com/wp-content/uploads/2023/12/td-amazon-smile-logo-01-large.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=AMAZON+CASE+STUDY';"
+                             alt="Amazon case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">AMAZON: NEW PRODUCT RECOMMENDATION CAROUSEL</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Strategizing the launch of a new product recommendation carousel and <strong>AI-powered marketing for Amazon.</strong>
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="0">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="1"> <img src="https://i.ytimg.com/vi/ZG4JQX4BO9A/maxresdefault.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=G-MAPS+CASE+STUDY';"
+                             alt="G-maps case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">G-MAPS: ROAD SAFETY & AWARENESS</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Enhancing Road Safety and Awareness with Immersive Navigation.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="1">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfPimrl1lwgrW3OHOuuyReVPqtc_Hd7mp4A&s"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=YOUTUBE+CASE+STUDY';"
+                             alt="YouTube case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">YOUTUBE: RECOMMENDATION ALGORITHM</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Metrics to determine the effectiveness of YouTube's recommendation algorithm.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="2">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="3"> <img src="https://i.ytimg.com/vi/GV3HUDMQ-F8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBDX0meXWntQams20Wn3jArUnablg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=NETFLIX+CASE+STUDY';"
+                             alt="Netflix case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">NETFLIX DATA CONSUMPTION</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        A guesstimate of daily data consumed by Netflix users worldwide.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="3">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="4"> <img src="https://swarajya.gumlet.io/swarajya/2023-01/8b1231a8-6d28-4c7d-92ee-f0c4faebf5e9/Photo_1__Title_image__Connected__smart_kitchen_of_the_future__Photo_Credit__Ken_Research.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=KITCHEN+CASE+STUDY';"
+                             alt="Kitchen case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">KITCHEN: KITCHEN-GENIE</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Your Intelligent Kitchen Companion for meal inspiration, inventory, and smart shopping.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="4">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="5"> <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/27/4b/e2274ba5-1e24-fb59-4332-9ca08a94d358/AppIconRelease-0-1x_U007epad-0-0-0-10-0-0-0-85-220-0.png/1200x630wa.png"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=ALEXA+CASE+STUDY';"
+                             alt="Alexa case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">ALEXA: AURAPLAY</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Redefining Smart Home Interaction with Personalized Holographic Companions.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="5">Read more...</a>
+                </div>
+
+                <div class="case-study-item">
+                    <a href="#" class="case-study-read-more" data-case-study-id="6"> <img src="https://www.shutterstock.com/image-illustration/empty-airport-terminal-lounge-airplane-600nw-758602234.jpg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=AIRPORT+CASE+STUDY';"
+                             alt="Airport case study image" class="rounded-sm mb-6 mx-auto">
+                    </a>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">AIRPORT: SKYSERVE</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        "SkyServe" – an innovative, within-airport delivery application bringing retail, food, and beverage directly to passengers.
+                    </p>
+                    <a href="#" class="case-study-read-more" data-case-study-id="6">Read more...</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-work" class="bg-[#F5F5F5] py-16 px-4 border-t border-b border-gray-200"> <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">MY WORK</h2>
+
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="my-work-item">
+                        <div class="work-label">INTERNSHIP</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3 uppercase">SOFTWARE ENGINEERING INTERN AT TECH BROTHERS PVT. LTD.</h3>
+                        <p class="text-gray-600 mb-4">Feb. 2023 - May. 2023</p>
+                        <ul id="internship-achievements" class="text-gray-700 space-y-2">
+                            <li>Presented findings to stakeholders improving production times by 15% and generating cost savings.</li>
+                            <li>Directly communicated with international clients to understand pain points and develop tailored software solutions, enhancing user satisfaction.</li>
+                            <li>Collaborated with senior managers to design and implement product improvement strategies, innovating features and aligning roadmaps with customer needs.</li>
+                        </ul>
+                    </div>
+
+                    <div class="my-work-item">
+                        <div class="work-label">PROJECT</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3 uppercase">VIRTUAL BUDDY</h3>
+                        <p class="text-gray-600 mb-4">Nov. 2022 - Jan. 2023 | Role: Team Lead and Core Developer (College Project)</p>
+                        <ul id="virtual-buddy-achievements" class="text-gray-700 space-y-2">
+                            <li>Directed the development of a voice-based chatbot using advanced technologies (NLP, APIs, AI, and ML), serving over 150 users with a 90% success rate in query resolution.</li>
+                            <li>Spearheaded project strategy and execution, implementing agile principles for on-time delivery and user alignment.</li>
+                        </ul>
+                    </div>
+
+                    <div class="my-work-item">
+                        <div class="work-label">PROJECT</div>
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-3 uppercase">UNRAVELING THE TWITTERSPHERE</h3>
+                        <p class="text-gray-600 mb-4">Jan. 2024 - May. 2024 | Role: Developer (College Project)</p>
+                        <ul id="twittersphere-achievements" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Developed an interactive Twitter sentiment analysis dashboard, accelerating decision-making by 20%.</li>
+                            <li>Led data collection and analysis to provide actionable insights for stakeholders, supporting data-driven strategy formulation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="bg-white py-16 px-4 border-b border-gray-100">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">SKILLS</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-lightbulb w-7 h-7 mr-3 text-gray-700"></i>
+                            STRATEGIC DEVELOPMENT
+                        </h3>
+                        <ul id="strategic-skills" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Critical thinking</li>
+                            <li>Problem-solving</li>
+                            <li>Growth mindset</li>
+                            <li>User empathy</li>
+                            <li>Competitive analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-laptop-code w-7 h-7 mr-3 text-gray-700"></i>
+                            TECHNICAL PROFICIENCY
+                        </h3>
+                        <ul id="technical-skills" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Python, C++</li>
+                            <li>MySQL, SQL</li>
+                            <li>Data Analysis</li>
+                            <li>IoT, Cloud Computing</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-list-check w-7 h-7 mr-3 text-gray-700"></i>
+                            PRODUCT & PROJECT MANAGEMENT
+                        </h3>
+                        <ul id="management-skills" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Product Development Lifecycle</li>
+                            <li>Agile Methodologies</li>
+                            <li>Stakeholder Communication</li>
+                            <li>Cross-functional Collaboration</li>
+                            <li>Timeline Management</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-handshake w-7 h-7 mr-3 text-gray-700"></i>
+                            LEADERSHIP & COMMUNICATION
+                        </h3>
+                        <ul id="leadership-skills" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Team Leadership</li>
+                            <li>Effective Communication</li>
+                            <li>Persuasion, Mentorship</li>
+                            <li>Public Speaking</li>
+                            <li>Conflict Resolution</li>
+                        </ul>
+                    </div>
+
+                    <div class="card lg:col-start-2">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <i class="fa-solid fa-star w-7 h-7 mr-3 text-gray-700"></i>
+                            SOFT SKILLS
+                        </h3>
+                        <ul id="soft-skills" class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Adaptability, Team Player</li>
+                            <li>Analytical Thinking</li>
+                            <li>Prioritization</li>
+                            <li>Calm Under Pressure</li>
+                            <li>Creative Thinking</li>
+                            <li>Risk-Taker, Energetic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-me" class="py-16 px-4 bg-[#EEE8DF]"> <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-gray-900 mb-12 uppercase tracking-wide text-center">WHY ME?</h2>
+                <div class="card mx-auto max-w-4xl">
+                    <div class="flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-handshake-angle w-20 h-20 text-[#1A1A1A] mt-0 mb-0"></i> <p id="why-me-text" class="text-gray-700 leading-relaxed text-center mt-4"> I’m not just an engineer or a product enthusiast — I’m a person who finds joy in connecting ideas, learning from every experience, and tackling challenges head‑on. Leading a sports team taught me resilience, discipline, and how to motivate people toward a common goal. Working on internships and projects taught me the value of clear communication, technical precision, and focusing on the ‘why’ behind every feature.
+
+From understanding user pain points and creating case studies, to presenting to stakeholders and volunteers, I’ve embraced a range of roles that shaped a holistic approach to problem‑solving. I am passionate about making things that matter, connecting with people, and using my skills and experience to contribute to teams that value collaboration, innovation, and making an impact.
+
+If you’re looking for someone who is genuine, adaptable, and excited to create, learn, and grow every step of the way — I’m ready to contribute.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-black text-white py-16 px-4 text-center">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold mb-8 uppercase tracking-wide">THANK YOU!</h2>
+                <p class="text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Thank you for reviewing my portfolio. I am excited about the opportunity to contribute to your team and create meaningful impact.
+                </p>
+
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <p class="text-xl font-semibold uppercase">LABHANSHU VYAS</p>
+                    <p class="text-lg flex items-center">
+                        <i class="fas fa-envelope w-5 h-5 mr-2"></i> <a href="mailto:labhanshuvyas21@gmail.com" class="hover:underline">labhanshuvyas21@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 py-3 text-center text-sm">
+        <p>&copy; 2024 Labhanshu Vyas. All rights reserved.</p>
+    </footer>
+
+    <div id="case-study-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h3 id="modal-case-study-title" class="text-2xl font-semibold text-gray-900 mb-4 uppercase"></h3>
+            <div id="modal-case-study-details" class="text-gray-700 leading-relaxed space-y-4">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Modal elements
+        const caseStudyModal = document.getElementById('case-study-modal');
+        const modalCloseButton = caseStudyModal.querySelector('.modal-close-button');
+        const modalCaseStudyTitle = document.getElementById('modal-case-study-title');
+        const modalCaseStudyDetails = document.getElementById('modal-case-study-details');
+
+        // Define case study details for the modal
+        const caseStudyDetails = [
+            {
+                title: "AMAZON: NEW PRODUCT RECOMMENDATION CAROUSEL",
+                details: `
+                    <p>“How would you launch a new product recommendation carousel for Amazon?”</p>
+                    <h4><i class="fas fa-bullseye mr-2 text-gray-600"></i><strong>Our Core Strategy for the Amazon Recommendation Carousel</strong></h4>
+                    <ul>
+                        <li>Our primary goal with this new carousel is clear: we want to increase our conversion rate, help customers discover more relevant products, and ultimately boost our average order value.</li>
+                        <li>The fundamental problem we're addressing is the sheer volume of products on Amazon – it can be overwhelming, and customers might miss out on great items they'd love.</li>
+                    </ul>
+                    <h4><i class="fas fa-map-marker-alt mr-2 text-gray-600"></i><strong>1. Where We'll Put It: The Product Detail Pages (PDPs)</strong></h4>
+                    <p>After evaluating various placements, we've decided to initially launch this carousel on the Product Detail Pages. Why here? Because when a customer is on a PDP, they're already highly engaged and considering a purchase. This is the perfect moment to subtly suggest complementary items or alternatives, making their shopping journey more efficient.</p>
+                    <h4><i class="fas fa-tags mr-2 text-gray-600"></i><strong>2. What We'll Recommend: "Item-to-Item" Logic</strong></h4>
+                    <p>For the type of recommendations, we'll start with "Item-to-Item" logic. This means if a customer is looking at a specific product, the carousel will show items frequently bought with it, or those highly similar. This approach is highly relevant, contextual, and proven to be effective for cross-selling and upselling, directly impacting our average order value.</p>
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="p-2 border border-gray-300">Recommendation Logic</th>
+                                <th class="p-2 border border-gray-300">Description</th>
+                                <th class="p-2 border border-gray-300">Pros</th>
+                                <th class="p-2 border border-gray-300">Cons</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Personalized</strong></td>
+                                <td class="p-2 border border-gray-300">Based on your past actions</td>
+                                <td class="p-2 border border-gray-300">Highly relevant</td>
+                                <td class="p-2 border border-gray-300">Limited for new users</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Collaborative</strong></td>
+                                <td class="p-2 border border-gray-300">"Customers who liked X also liked Y"</td>
+                                <td class="p-2 border border-gray-300">Good for related discovery</td>
+                                <td class="p-2 border border-gray-300">Less precise sometimes</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Item-to-Item (Product Affinity)</strong></td>
+                                <td class="p-2 border border-gray-300">"Frequently Bought Together," "Complementary"</td>
+                                <td class="p-2 border border-gray-300">Excellent for AOV, contextual</td>
+                                <td class="p-2 border border-gray-300">Requires strong product data</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Popularity</strong></td>
+                                <td class="p-2 border border-gray-300">Bestsellers, trending items</td>
+                                <td class="p-2 border border-gray-300">Good for general discovery</td>
+                                <td class="p-2 border border-gray-300">Less personalized</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Sponsored</strong></td>
+                                <td class="p-2 border border-gray-300">Paid placements</td>
+                                <td class="p-2 border border-gray-300">Revenue generation</td>
+                                <td class="p-2 border border-gray-300">Can feel intrusive</td>
+                            </tr>
+                            <tr>
+                                <td class="p-2 border border-gray-300"><strong>Curated</strong></td>
+                                <td class="p-2 border border-gray-300">Hand-picked selections</td>
+                                <td class="p-2 border border-gray-300">High quality</td>
+                                <td class="p-2 border border-gray-300">Not scalable, manual</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4><i class="fas fa-rocket mr-2 text-gray-600"></i><strong>3. Our Go-to-Market Approach: A Phased, Data-Driven Launch</strong></h4>
+                    <ul>
+                        <li><strong>Phase 1: Build & Test Small.</strong> We'll develop the recommendation algorithm and design the carousel interface. Critically, we'll implement a robust A/B testing framework. We'll deploy the carousel to a very small segment of users (say, 1%) and meticulously compare their shopping behavior (conversion rates, items per order) against a control group that doesn't see the new carousel. This ensures the feature is truly effective before wider rollout.</li>
+                        <li><strong>Phase 2: Gradual Rollout.</strong> If our initial tests show positive results and no unforeseen issues, we'll gradually expand the visibility of the carousel to more users – perhaps 5%, then 10%, and so on. During this phase, we won't make a big announcement; the goal is for the improvement to feel like a natural, seamless enhancement to the Amazon experience. We'll continuously monitor performance metrics to ensure stability and customer satisfaction.</li>
+                        <li><strong>Phase 3: Optimize & Expand.</strong> Once the carousel is fully rolled out and stable, the work doesn't stop. We'll constantly analyze the vast data generated to refine the recommendation algorithm, making it smarter and even more precise. We'll also explore opportunities to expand this carousel to other high-impact areas, suchs as the Amazon homepage, where it can drive broader product discovery and re-engagement for our customers.</li>
+                    </ul>
+                    <p>Now, tell me “How can we use AI powered marketing in this?”</p>
+                    <h4><i class="fas fa-robot mr-2 text-gray-600"></i><strong>Let's Talk AI-Powered Marketing for This Feature: Thinking Beyond the Box</strong></h4>
+                    <p>For a subtle, integrated feature like a recommendation carousel, traditional marketing campaigns that shout "New Feature!" might not be the most effective. Instead, we can leverage AI to market the value of the recommendations themselves, making them indispensable to the customer.</p>
+                    <p>Here are two outside-the-box AI-powered marketing concepts:</p>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>1. "Recommendation Insights": The 'Why' Behind the 'What'</strong></h4>
+                    <p>Imagine recommendations that don't just show you products, but also tell you why they're relevant, almost like a smart, helpful friend. My idea is to use AI to generate tiny, persuasive snippets that provide this context directly on the carousel.</p>
+                    <p><strong>How it Works:</strong></p>
+                    <ul>
+                        <li>When our recommendation engine picks a product for a user, a secondary AI layer will analyze relevant data points – positive phrases from customer reviews, common use cases, or the user's recent Browse history.</li>
+                        <li>It then dynamically creates a short, compelling reason for that specific recommendation.</li>
+                        <li><strong>Examples of AI-generated snippets:</strong></li>
+                        <ul>
+                            <li>If you're looking at a new laptop and the carousel recommends a sleeve: "Users love this sleeve for its 'snug fit' and 'extra padding' with this model."</li>
+                            <li>If you just searched for "running shoes" and it shows a smartwatch: "Perfect for your recent interest in fitness: this smartwatch is praised for its 'accurate heart rate tracking' during runs."</li>
+                            <li>If you're buying coffee and it recommends a mug: "Frequently bought with your chosen brew: many customers highlight this mug's 'ergonomic design' for daily use."</li>
+                        </ul>
+                    </ul>
+                    <p><strong>Why this is effective marketing:</strong> This isn't an ad; it's marketing the intelligence and trustworthiness of our recommendation system. It addresses the customer's unspoken skepticism ("Is this just a random pick?") by offering a data-backed, relatable reason. It transforms the carousel from a mere display into a perceived intelligent assistant, building trust in our personalized suggestions.</p>
+                    <h4><i class="fas fa-hand-holding-usd mr-2 text-gray-600"></i><strong>2. "Your Discovery Co-Pilot": AI-Driven Nudges & Feedback Loop</strong></h4>
+                    <p>Sometimes, customers might be Browse for a while without finding exactly what they need, or they might just overlook the carousel. Our AI can act as a gentle, proactive "co-pilot" to guide them towards valuable recommendations.</p>
+                    <p><strong>How it Works:</strong></p>
+                    <ul>
+                        <li>Our AI will subtly monitor user engagement with the carousels. If a user is repeatedly scrolling past recommendations without clicking, or if they're spending a long time searching within a category, the AI recognizes a potential need for assistance.</li>
+                        <li>It then triggers a subtle, personalized in-app nudge. This isn't a disruptive pop-up, but perhaps a small, animated prompt in the corner or a brief, contextual message.</li>
+                        <li><strong>Examples of AI-driven nudges:</strong></li>
+                        <ul>
+                            <li>(Gentle Text Overlay near the carousel): "Still exploring? Your Discovery Co-Pilot has some fresh ideas tailored for you."</li>
+                            <li>(Small, unobtrusive chat bubble): "It looks like you're searching for a [product type]. Would you like me to refine your recommendations based on what's most important to you (e.g., brand, price, features)?"</li>
+                        </ul>
+                        <li>If a user engages with the nudge, the AI can then open a quick, conversational mini-flow to gather more precise preferences, which directly feeds back into improving the carousel's recommendations.</li>
+                    </ul>
+                    <p><strong>Why this is effective marketing:</strong> This isn't about pushing products; it's about marketing the carousel's ability to adapt and learn to the customer's individual needs. It makes the customer feel heard and empowered. By offering to refine recommendations, we directly market the value of using the carousel's intelligence. It turns a passive UI element into an active, helpful, and even empathetic shopping companion.</p>
+                    <p>In essence, these AI-powered marketing strategies go beyond traditional advertising. They leverage AI to embed the marketing directly into the user experience itself. By making the recommendation carousel demonstrably more useful, trustworthy, and engaging for each individual customer, we foster a deeper relationship with our platform and its intelligent features.</p>
+                `
+            },
+            {
+                title: "G-MAPS: ENHANCING ROAD SAFETY AND AWARENESS WITH IMMERSIVE NAVIGATION",
+                details: `
+                    <p>Today, Google Maps excels at guiding us from point A to B. Yet, its current capabilities leave a significant void in our driving confidence. It doesn't tell us about that jarring, unmarked speed breaker around the bend, or the hidden pothole waiting to damage our vehicle. It remains silent when we unknowingly venture into an unfamiliar area that has recently experienced unsettling incidents, especially after dark.</p>
+                    <h4><i class="fas fa-compass mr-2 text-gray-600"></i><strong>The Core Idea: Smart Safety Companion & Immersive Navigation</strong></h4>
+                    <p>The core of this transformative idea is to evolve Google Maps into a "Smart Safety Companion" and an "Immersive Navigation Experience." This is about empowering every driver with unparalleled awareness and unwavering confidence, ensuring each journey is not merely faster, but inherently safer, smoother, and infinitely more comfortable.</p>
+                    <h4><i class="fas fa-exclamation-triangle mr-2 text-gray-600"></i><strong>Addressing the Heart of Driver Pain Points</strong></h4>
+                    <p>Consider the everyday realities of driving and riding. This vision tackles some of the most profound anxieties and discomforts:</p>
+                    <ul>
+                        <li><strong>Sudden Encounters with Unmarked Hazards:</strong> The jarring impact of unforeseen speed breakers or potholes leads to jerks, potential vehicle damage, and significant discomfort – a genuine pain point for many, especially those with pre-existing conditions.</li>
+                        <li><strong>Unpredictable Traffic & Diversions:</strong> The constant anxiety of unexpected diversions or rapidly changing traffic conditions adds immense stress to even routine commutes.</li>
+                        <li><strong>Anxiety in Unknown Territories:</strong> Driving into an unfamiliar area at night, particularly with news of recent local incidents, can be deeply unsettling and compromise personal safety.</li>
+                        <li><strong>Distracting Navigation:</strong> The necessity of constantly glancing down at a 2D map pulls precious attention away from the road, heightening the risk of distraction and accidents.</li>
+                        <li><strong>Unawareness of Local Road Conditions:</strong> A lack of granular data on road quality – gravel sections, steep inclines, sharp turns – leaves drivers unprepared for the physical demands of the route.</li>
+                        <li><strong>Personal Safety Concerns:</strong> The desire for a sense of security in unknown localities, particularly after dark, is a fundamental human need that current navigation largely ignores.</li>
+                        <li><strong>Need for Intuitive Immersion:</strong> A longing exists for a more intuitive, less attention-demanding navigation experience that allows the driver to focus on the surroundings rather than the screen.</li>
+                        <li><strong>Specific Passenger Needs:</strong> For pregnant passengers, individuals with chronic back pain, or those traveling with small children, avoiding bumpy roads isn't a luxury; it's a critical comfort and health consideration. Current maps fail to offer "comfort-optimized" routes, exacerbating physical discomfort and travel anxiety.</li>
+                    </ul>
+                    <h4><i class="fas fa-question-circle mr-2 text-gray-600"></i><strong>Prioritizing Use Cases/Pain Points: The Root Cause Analysis (RCA)</strong></h4>
+                    <p>The core pain point identified is the profound lack of predictive and visually immersive road condition awareness and localized safety intelligence within current navigation systems. Google Maps, in its current form, primarily offers reactive traffic alerts and static map data. This reactive nature is fundamentally insufficient for truly proactive safety and comfort.</p>
+                    <p><strong>The root causes of this critical limitation are:</strong></p>
+                    <ul>
+                        <li><strong>Limited Data Granularity:</strong> While Google Maps collects some general road condition data (accidents, jams, roadworks), it conspicuously lacks comprehensive, real-time, micro-level data on specific, impactful hazards like individual potholes or sudden, unmarked speed breakers.</li>
+                        <li><strong>Absence of Dynamic Local Safety Intelligence:</strong> Despite collaborations with authorities for specific "black spot" alerts, a holistic, dynamically updated system integrating broader crime trends and local incident data (beyond just traffic accidents) is glaringly absent.</li>
+                        <li><strong>2D Map Limitation:</strong> A traditional 2D map, even with sophisticated traffic overlays, simply cannot convey the tactile feel or visual complexity of upcoming road features or potential threats. This inherent limitation leads directly to unexpected, jarring, and potentially dangerous situations for drivers.</li>
+                        <li><strong>Lack of Proactive Comfort Features:</strong> Current routing algorithms are narrowly focused on optimizing for speed and traffic. They entirely overlook road smoothness – a critical factor for user comfort and a significant driver of anxiety for many.</li>
+                    </ul>
+                    <p>This collective deficiency directly leads to pervasive driver anxiety, the potential for accidents, avoidable vehicle damage, and profound discomfort, especially for vulnerable users.</p>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>The Transformative Solutions: VisionDrive & SafePath AI</strong></h4>
+                    <p>Our solutions intertwine cutting-edge visualization with intelligent data to create an unparalleled driving reality.</p>
+                    <h4><i class="fas fa-car-alt mr-2 text-gray-600"></i><strong>1. VisionDrive: Immersive AR/VR Navigation</strong></h4>
+                    <p>This solution transcends traditional navigation, offering a truly immersive experience that brings the map to life, allowing users to pre-experience or visually augment their journey.</p>
+                    <ul>
+                        <li><strong>AR-Enhanced In-Vehicle Projection (for cars):</strong> This is the core of immersive driving. Leveraging sophisticated in-car display technologies (Heads-Up Displays, augmented reality dashboards, or dedicated projectors), navigation is seamlessly overlaid directly onto the real-world view through the windshield.</li>
+                        <li><strong>Key Visuals:</strong> Imagine large, clear arrows for turns, intuitive lane guidance, dynamically outlined upcoming potholes or speed breakers glowing in vibrant colors, and visually marked "danger zones" projected directly onto the road surface ahead.</li>
+                        <li><strong>Dynamic Overlays:</strong> As the vehicle approaches a bump, a subtle visual "ripple" effect or a highlighted 3D model of the bump appears directly on the road ahead in the AR view, providing immediate, intuitive warning that fundamentally changes road interaction.</li>
+                        <li><strong>VR/AR Headset Navigation (for advanced users/bikes - Future State):</strong> While not for active driving, this integrates with upcoming AR/VR headsets (e.g., Apple Vision Pro, Meta Quest) for pre-journey route simulation. Users can "walk" or "drive" through their planned route in a simulated 3D environment, experiencing upcoming hazards, turns, and points of interest virtually before they embark. This is particularly useful for planning long trips or for those with anxiety about new routes, offering unprecedented preparation.</li>
+                        <li>For bike riders, a safe, non-distracting AR overlay on smart helmets/visors could project critical alerts (e.g., "Speed breaker 50m ahead") without obstructing their view. This is a very high-risk, long-term vision, demanding the utmost caution and robust development.</li>
+                    </ul>
+                    <h4><i class="fas fa-shield-alt mr-2 text-gray-600"></i><strong>2. SafePath AI: Intelligent Hazard & Safety Alerts</strong></h4>
+                    <p>Complementing the immersive experience, SafePath AI acts as an ever-vigilant co-pilot, driven by the power of artificial intelligence.</p>
+                    <ul>
+                        <li><strong>Micro-Level Road Hazard Alerts:</strong> This solution profoundly enhances existing user reporting ("pothole," "speed breaker (unmarked)," "rough surface") with a robust AI-powered verification system. It will explore strategic partnerships with vehicle manufacturers for anonymous sensor data integration (suspension jolts, sudden braking) to precisely identify hazards in real-time. Predictive analytics will even anticipate new potholes based on weather and road conditions. Drivers receive proactive audible warnings and clear on-screen indicators (e.g., "Sharp Speed Breaker Ahead in 200m," "Pothole Zone for next 50m"), with adjustable sensitivity for various vehicle types.</li>
+                        <li><strong>Dynamic Local Crime & Danger Zone Alerts:</strong> This is a crucial element for personal security. The system leverages Google's unparalleled AI to scan public news, police reports, and verified social media for recent crime incidents in specific areas. Alerts are dynamic and context-aware (e.g., "Caution: Recent incidents reported in this area after 9 PM. Consider alternative route."). It is paramount that these alerts are privacy-first, based on aggregated, publicly available, and verified incident data, with users having full control over opting in/out.</li>
+                        <li><strong>"Comfort Route" Optimization:</strong> A truly empathetic routing option that prioritizes smoother roads, even if slightly longer. This leverages granular road quality data (from crowdsourcing, sensor data, and municipal surveys) to calculate a "comfort score" for routes, specifically benefiting patients, pregnant women, and those prone to back pain.</li>
+                    </ul>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
+                    <p>Google Maps possesses an extraordinary potential to move beyond a mere navigation tool to become a comprehensive guardian of safety and comfort on the road. By proactively alerting drivers to hazards and danger zones through the intelligent "SafePath AI" and revolutionizing navigation with the immersive "VisionDrive" AR/VR experience, this vision can profoundly enhance user confidence and well-being. The proposed alternative, "RoadSense," further demonstrates a pragmatic pathway to achieve similar safety and comfort benefits by leveraging Google's inherent strengths in data and community. This holistic product vision encapsulates both ambitious innovation and practical, impactful implementation, setting the stage for a new era of mindful and secure travel.</p>
+                `
+            },
+            {
+                title: "YOUTUBE: RECOMMENDATION ALGORITHM EFFECTIVENESS",
+                details: `
+                    <p>As the PM for YouTube's recommendation algorithm, what metrics would you use to determine its effectiveness?</p>
+                    <h4><i class="fas fa-star mr-2 text-gray-600"></i><strong>The Main Goal of YouTube's Recommendation Algorithm</strong></h4>
+                    <p>At its core, the YouTube recommendation algorithm has a huge job: to keep users engaged with content they love, help them discover new things, and ultimately maximize the time they spend on the platform. If we do that well, everything else – like ad revenue and creator success – naturally follows.</p>
+                    <h4><i class="fas fa-chart-line mr-2 text-gray-600"></i><strong>Key Metrics We'd Use to Measure Effectiveness</strong></h4>
+                    <p>I'd break down our metrics into a few important categories:</p>
+                    <h4><i class="fas fa-users mr-2 text-gray-600"></i><strong>1. Engagement Metrics: Are Users Watching More?</strong></h4>
+                    <ul>
+                        <li><strong>Total Watch Time:</strong> This is probably the most critical metric. Are users spending more minutes watching videos because of our recommendations? This could be daily, weekly, or per session. If watch time goes up, our algorithm is likely doing a good job.</li>
+                        <li><strong>Session Length:</strong> Are recommendations helping users stay on YouTube for longer stretches? We'd look at the average duration of a user's viewing session when they come from a recommended video.</li>
+                        <li><strong>Click-Through Rate (CTR) on Recommended Videos:</strong> How often do users actually click on a video shown in a recommendation carousel or feed? This tells us if the initial suggestion is appealing. (We need to be careful with this one though – a high CTR on a bad video isn't good, which leads to the next category).</li>
+                        <li><strong>Repeat Views / Retention:</strong> Do users come back to YouTube day after day, or week after week, because they found awesome stuff through our recommendations?</li>
+                    </ul>
+                    <h4><i class="fas fa-heart mr-2 text-gray-600"></i><strong>2. Satisfaction Metrics: Do Users Like What They're Seeing?</strong></h4>
+                    <ul>
+                        <li><strong>Thumbs Up/Down Ratio:</strong> This is direct feedback. If users are giving more "thumbs up" and fewer "thumbs down" to recommended videos, it's a strong signal that the recommendations are high quality and relevant to their tastes.</li>
+                        <li><strong>"Not Interested" / "Don't Recommend Channel" Clicks:</strong> These are explicit negative signals. If users are actively telling us they don't want to see a video or channel, our algorithm needs to learn from that to avoid similar recommendations in the future.</li>
+                        <li><strong>Time to Dislike/Stop Watching:</strong> If a user clicks on a recommended video but then quickly closes it or gives it a "thumbs down," that indicates a poor recommendation. We want to maximize the time spent after a click.</li>
+                        <li><strong>Survey Data (e.g., NPS, CSAT):</strong> Periodically asking users through in-app surveys if they are happy with their recommendations or if they feel they are discovering new, relevant content.</li>
+                    </ul>
+                    <h4><i class="fas fa-binoculars mr-2 text-gray-600"></i><strong>3. Discoverability & Diversity Metrics: Are We Broadening Horizons?</strong></h4>
+                    <ul>
+                        <li><strong>New Channel/Content Discovery:</strong> Are users finding new creators and types of videos they haven't watched before, thanks to recommendations? This prevents "filter bubbles" where users only see the same type of content.</li>
+                        <li><strong>Category Diversity in Watch History:</strong> Are users watching videos from a wider range of categories (e.g., mixing gaming with cooking, or news with DIY) due to recommendations? This suggests a healthy, exploratory experience.</li>
+                        <li><strong>Long-Tail Content Consumption:</strong> Are recommendations helping older or less popular videos find their audience, not just pushing the viral hits? This supports a diverse creator ecosystem.</li>
+                    </ul>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
+                    <p>To determine the effectiveness of YouTube's recommendation algorithm, we need a holistic view. We'd heavily weigh Watch Time as our primary driver, balanced with User Satisfaction (like thumbs up/down) to ensure quality. Finally, Discoverability metrics would tell us if we're truly enriching the user experience by helping them find new and diverse content, keeping them engaged and coming back for more. This combined approach ensures the algorithm serves both user needs and YouTube's business goals.</p>
+                `
+            },
+            {
+                title: "NETFLIX DATA CONSUMPTION: WORLDWIDE DAILY ESTIMATE",
+                details: `
+                    <h4><i class="fas fa-globe mr-2 text-gray-600"></i><strong>Problem/Goal: Guesstimate Netflix's Daily Global Data Consumption</strong></h4>
+                    <p>"How much data is consumed by Netflix users worldwide in a day?" This is a fun one that requires breaking down a big number into smaller, manageable parts.</p>
+                    <h4><i class="fas fa-cubes mr-2 text-gray-600"></i><strong>Breaking It Down: The Key Pieces</strong></h4>
+                    <p>To figure this out, we need to ask ourselves:</p>
+                    <ul>
+                        <li><strong>How many people watch Netflix?</strong> (Global Subscribers)</li>
+                        <li><strong>How much do they watch per day?</strong> (Average Daily Viewing Hours)</li>
+                        <li><strong>How much data does each hour of video use?</strong> (Data per Hour based on Quality)</li>
+                        <li><strong>What mix of video quality are people watching?</strong> (SD, HD, 4K)</li>
+                    </ul>
+                    <h4><i class="fas fa-calculator mr-2 text-gray-600"></i><strong>Making Our Assumptions (The Guesstimate Foundation)</strong></h4>
+                    <p>Let's use some round numbers and reasonable estimates:</p>
+                    <ul>
+                        <li><strong>Global Netflix Subscribers:</strong> Roughly 300 million users. (Netflix is a giant, this is a fair recent estimate).</li>
+                        <li><strong>Average Daily Viewing Hours per User:</strong> Let's say 2.5 hours/day. (Some binge, some watch less, this is a decent average).</li>
+                        <li><strong>Data Usage per Hour (Netflix's own guidance):</strong></li>
+                        <ul>
+                            <li><strong>Standard Definition (SD):</strong> 1 GB/hour</li>
+                            <li><strong>High Definition (HD):</strong> 3 GB/hour</li>
+                            <li><strong>Ultra HD (4K):</strong> 7 GB/hour</li>
+                        </ul>
+                        <li><strong>Quality Mix (Our Best Guess):</strong> We'll assume not everyone has 4K, and many are on mobile saving data.</li>
+                        <ul>
+                            <li><strong>20% of viewing is in SD</strong></li>
+                            <li><strong>60% of viewing is in HD</strong></li>
+                            <li><strong>20% of viewing is in 4K</strong></li>
+                        </ul>
+                    </ul>
+                    <h4><i class="fas fa-percentage mr-2 text-gray-600"></i><strong>The Guesstimate Calculation</strong></h4>
+                    <p>Now, let's crunch the numbers!</p>
+                    <p><strong>Step 1: Total Daily Viewing Hours</strong></p>
+                    <p>300 million users * 2.5 hours/user = 750 million hours per day</p>
+                    <p><strong>Step 2: Data Consumption by Quality Tier</strong></p>
+                    <p><strong>SD Viewing:</strong> 750 million hours * 20% * 1 GB/hour = 150 million GB</p>
+                    <p><strong>HD Viewing:</strong> 750 million hours * 60% * 3 GB/hour = 1,350 million GB</p>
+                    <p><strong>4K Viewing:</strong> 750 million hours * 20% * 7 GB/hour = 1,050 million GB</p>
+                    <p><strong>Step 3: Sum It All Up!</strong></p>
+                    <p>150M GB (SD) + 1,350M GB (HD) + 1,050M GB (4K) = 2,550 million GB</p>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Our Final Guesstimate</strong></h4>
+                    <p>So, based on our assumptions, Netflix users worldwide consume approximately <strong>2,550 million GB</strong> of data every single day!</p>
+                `
+            },
+            {
+                title: "KITCHEN: KITCHEN-GENIE – YOUR INTELLIGENT KITCHEN COMPANION",
+                details: `
+                    <h4><i class="fas fa-utensils mr-2 text-gray-600"></i><strong>Problem/Goal: Eliminate Kitchen Chaos & Decision Fatigue</strong></h4>
+                    <p>"What's for dinner tonight?" This seemingly simple question often leads to stress, food waste, and repetitive meals.</p>
+                    <p><strong>The Problem:</strong></p>
+                    <ul>
+                        <li><strong>"What to Cook?" Fatigue:</strong> Standing in front of the fridge, staring at ingredients, with no idea how to combine them into a meal.</li>
+                        <li><strong>Food Waste:</strong> Fresh produce forgotten at the back of the fridge, expiring before it's used.</li>
+                        <li><strong>Repetitive Meals:</strong> Sticking to a few tried-and-true recipes because it's easier than thinking of new ones.</li>
+                        <li><strong>Inventory Blindness:</strong> Not knowing what we actually have, leading to duplicate purchases or missed opportunities.</li>
+                    </ul>
+                    <h4><i class="fas fa-magic mr-2 text-gray-600"></i><strong>The Core Idea: "Kitchen-Genie" – Your Intelligent Kitchen Companion</strong></h4>
+                    <p>Today's home cooking, despite its joys, often involves significant stress and inefficiency. The fundamental concept is to create "Kitchen-Genie," an AI-powered product designed to transform the home cooking experience. This product will exist as either a dedicated smart kitchen tablet or a cross-platform application accessible on existing devices. "Kitchen-Genie's" core promise is to eliminate cooking uncertainty, inspire culinary creativity, and optimize kitchen inventory.</p>
+                    <p>For this product, it's not just a convenience; it's a fundamental reimagining of the home cooking journey, ensuring that every cook, regardless of skill or circumstance, can prepare meals with ease, confidence, and minimal waste.</p>
+                    <h4><i class="fas fa-hand-holding-heart mr-2 text-gray-600"></i><strong>The Undeniable Value Proposition: Solving Core Kitchen Pain Points</strong></h4>
+                    <p>The home kitchen is fraught with common frustrations, and "Kitchen-Genie" directly targets these:</p>
+                    <ul>
+                        <li><strong>Physical Exertion & Accessibility:</strong> Instantly suggests diverse recipes based on what's available.</li>
+                        <li><strong>Time Sensitivity:</strong> Tracks expiration dates and prompts users to utilize ingredients proactively.</li>
+                        <li><strong>Perceived Overpricing:</strong> Offers an extensive, constantly updated library of recipes for variety.</li>
+                        <li><strong>Stress Reduction:</strong> Significantly reduces stress through seamless, on-demand service.</li>
+                        <li><strong>Enhanced Retail & F&B Discoverability:</strong> Acts as a virtual guide for finding ingredients and utensils.</li>
+                    </ul>
+                    <h4><i class="fas fa-stethoscope mr-2 text-gray-600"></i><strong>Root Cause Analysis (RCA) of Kitchen Pain Points</strong></h4>
+                    <p>The core problem stems from the lack of intelligent, real-time integration between available ingredients, user preferences, and a vast recipe knowledge base, compounded by the physical organization challenges of a home kitchen.</p>
+                    <ul>
+                        <li><strong>Root Cause 1: Cognitive Load & Decision Fatigue:</strong> "Kitchen-Genie" offloads this by dynamically generating ideas.</li>
+                        <li><strong>Root Cause 2: Disconnected Inventory:</strong> "Kitchen-Genie" centralizes and automates this.</li>
+                        <li><strong>Root Cause 3: Knowledge Gap & Lack of Inspiration:</strong> "Kitchen-Genie" provides diverse options and learning.</li>
+                        <li><strong>Root Cause 4: Disorganized Space & Multi-User Access:</strong> "Kitchen-Genie" provides spatial awareness.</li>
+                    </ul>
+                    <p>"Kitchen-Genie" directly tackles these root causes by introducing an AI-powered digital layer that optimizes meal planning, inventory, and kitchen navigation for all users.</p>
+                    <h4><i class="fas fa-cogs mr-2 text-gray-600"></i><strong>How "Kitchen-Genie" Works: The Solutions</strong></h4>
+                    <p>"Kitchen-Genie" leverages cutting-edge AI and seamless integration to deliver an unparalleled cooking assistant:</p>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>1. Smart Meal Inspiration ("What Can I Make?"):</strong></h4>
+                    <ul>
+                        <li><strong>Ingredient-Based Recipes:</strong> Instantly suggests recipes based on your kitchen inventory.</li>
+                        <li><strong>Vast Recipe Library:</strong> Extensive, constantly updated library for endless variety.</li>
+                        <li><strong>"Flavor Profile" Matching:</strong> Learns your preferences over time, offering personalized suggestions.</li>
+                    </ul>
+                    <h4><i class="fas fa-boxes mr-2 text-gray-600"></i><strong>2. Intuitive Inventory Management:</strong></h4>
+                    <ul>
+                        <li><strong>Automated Stock Tracking:</strong> Scan grocery receipts or photos to update inventory.</li>
+                        <li><strong>Manual Adjustments:</strong> Quick manual input for fresh produce.</li>
+                        <li><strong>Expiration Reminders:</strong> Tracks dates to reduce food waste.</li>
+                    </ul>
+                    <h4><i class="fas fa-shopping-cart mr-2 text-gray-600"></i><strong>3. Smart Shopping & Replenishment:</strong></h4>
+                    <ul>
+                        <li><strong>Personalized Shopping Lists:</strong> Automatically generated based on meal planning.</li>
+                        <li><strong>"What to Buy Next?" Suggestions:</strong> Proactively suggests ingredients based on cooking habits.</li>
+                    </ul>
+                    <h4><i class="fas fa-question mr-2 text-gray-600"></i><strong>4. Guest Guiding & Item Location ("Where's the... ?"):</strong></h4>
+                    <ul>
+                        <li><strong>Voice Assistant Guidance:</strong> Guests can ask "Genie" where items are located.</li>
+                        <li><strong>Optional Hologram Chef Visuals:</strong> For dedicated devices, a holographic chef could visually guide users.</li>
+                        <li><strong>Benefits:</strong> Reduces friction for guests, eliminates owner stress, enhances user-friendliness.</li>
+                    </ul>
+                    <h4><i class="fas fa-brain mr-2 text-gray-600"></i><strong>The AI at the Core: Understanding YOU (and Your Kitchen)</strong></h4>
+                    <p>This isn't just a recipe app; it's an intelligent companion. The AI will continuously:</p>
+                    <ul>
+                        <li><strong>Analyze Recipe Ratings & Ingredient Usage:</strong> Learn from user "likes" and "dislikes."</li>
+                        <li><strong>Observe Meal Patterns & Adapt:</strong> Recognize cooking habits and refine suggestions.</li>
+                        <li><strong>Learn Kitchen Layout (User Defined):</strong> Stores user input on ingredient locations for guiding features.</li>
+                    </ul>
+                    <h4><i class="fas fa-dollar-sign mr-2 text-gray-600"></i><strong>Revenue Generation Model</strong></h4>
+                    <p>To make "Kitchen-Genie" a sustainable product, a subscription-based model will be implemented, focusing on value and flexibility:</p>
+                    <ul>
+                        <li><strong>Individual Plan:</strong> Monthly or annual subscription for single users.</li>
+                        <li><strong>Family Plan:</strong> Higher tiered plan for households with multiple members, includes:</li>
+                        <ul>
+                            <li><strong>Shared Inventory:</strong> All family members can view and update.</li>
+                            <li><strong>Individual Profiles with Shared Learning:</strong> "Taste inheritance" feature ensures preferences transfer if a family member moves out.</li>
+                        </ul>
+                    </ul>
+                    <h4><i class="fas fa-shield-alt mr-2 text-gray-600"></i><strong>Addressing Failure & Ensuring Reliability (Offline Capability)</strong></h4>
+                    <p>The importance of reliability, especially in the kitchen, is understood.</p>
+                    <ul>
+                        <li><strong>Offline Mode:</strong> Access to previously downloaded recipes, current inventory, and basic suggestions.</li>
+                        <li><strong>Constant Updates:</strong> App constantly updates recipe library, AI models, and databases when online.</li>
+                        <li><strong>Data Redundancy:</strong> User data securely stored locally and backed up to the cloud.</li>
+                    </ul>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
+                    <p>"Kitchen-Genie" is more than a kitchen app; it's an AI-powered solution to the daily culinary dilemma and kitchen organization. By intelligently suggesting recipes based on real-time inventory, managing pantry stock, learning user preferences, and now, guiding guests (via voice or a holographic chef) to items within the kitchen, it solves the "what to cook" problem, reduces food waste, and fosters a more harmonious kitchen environment for everyone. Its subscription model, especially the "taste inheritance" family plan, ensures sustainable revenue while providing long-term value. With robust offline capabilities and continuous updates, "Kitchen-Genie" promises to be an indispensable, reliable, and delightful kitchen companion for every household.</p>
+                `
+            },
+            {
+                title: "ALEXA: AURAPLAY – REDEFINING SMART HOME INTERACTION",
+                details: `
+                    <p>In the rapidly evolving landscape of smart home technology, we often find ourselves at the cusp of the next great leap. While voice assistants have fundamentally reshaped our interaction with technology, there remains a profound, unmet desire for deeper engagement and a more intuitive, multi-sensory experience. This is precisely the space where AuraPlay emerges as a revolutionary step forward.</p>
+                    <h4><i class="fas fa-volume-mute mr-2 text-gray-600"></i><strong>The Inherent Limitations of the Auditory Interface: Alexa as Just a Speaker</strong></h4>
+                    <p>Despite its remarkable utility, the current iteration of Alexa, confined to auditory output, faces significant challenges that limit its true potential:</p>
+                    <ul>
+                        <li><strong>The Lack of Visual Presence:</strong> A disembodied voice, however informative, inherently lacks the visual anchor crucial for comprehensive understanding and can feel sterile.</li>
+                        <li><strong>Limited Emotional Connection:</strong> Absence of visual cues restricts emotional bond with users.</li>
+                        <li><strong>Monotony for Younger Users:</strong> Auditory-only input diminishes engagement for children.</li>
+                        <li><strong>Underutilized Capabilities:</strong> Information remains constrained by auditory output medium.</li>
+                    </ul>
+                    <p>Ultimately, these intrinsic limitations mean that our valued smart home assistant, despite its brilliance, often functions as merely "just a speaker," falling short of the intelligent, intuitive companion it is capable of becoming.</p>
+                    <h4><i class="fas fa-magic mr-2 text-gray-600"></i><strong>AuraPlay: Your Personalized Holographic Companion – Redefining Smart Home Interaction</strong></h4>
+                    <p>This is where the transformative power of AuraPlay comes to the forefront. My vision, and indeed my passion, is to fundamentally redefine this experience. Imagine an impeccably designed device—perhaps an elegant orb or a minimalist column—that transcends mere sound projection. Instead, it actively projects a personalized, animated hologram directly into your living space.</p>
+                    <p>This is not a concept for a distant future; this is the tangible evolution of the smart home, designed for today. As the user, you would possess the unique ability to select your ideal holographic companion: be it a whimsical cartoon character, a loyal digital pet, an ethereal light form, or even a sophisticated, helpful human avatar. This chosen hologram then becomes your Alexa, a dynamic visual presence that intuitively responds to your voice commands, gestures, and the surrounding environment.</p>
+                    <h4><i class="fas fa-star-of-life mr-2 text-gray-600"></i><strong>Why AuraPlay is More Than a Product – It's a Revolution in Engagement</strong></h4>
+                    <p>AuraPlay represents far more than the mere addition of a visual element; it is the key to unlocking a profound new dimension of human-technology interaction, poised to revolutionize daily life:</p>
+                    <ul>
+                        <li><strong>Unparalleled Engagement & Deep Emotional Connection:</strong> Creates a sense of genuine companionship and emotional bond.</li>
+                        <li><strong>A New Era for Learning and Play, Particularly for Children:</strong> Offers rich, immersive experiences like interactive storytelling and engaging lessons.</li>
+                        <li><strong>Intuitive Visual Learning & Enhanced Productivity:</strong> Shifts from auditory overload to intuitive visual comprehension for information assimilation and task management.</li>
+                        <li><strong>Enhanced Accessibility & Clarity:</strong> Provides crucial clarity for individuals with hearing impairments or in noisy environments.</li>
+                        <li><strong>Ultimate Personalization:</strong> Ability to select and customize your holographic companion ensures a unique experience.</li>
+                    </ul>
+                    <h4><i class="fas fa-cogs mr-2 text-gray-600"></i><strong>Core Design Principles for a Groundbreaking Experience</strong></h4>
+                    <p>The realization of this groundbreaking experience rests upon several critical design principles:</p>
+                    <ul>
+                        <li><strong>Advanced Holographic Projection:</strong> Focus on high-fidelity, stable, and vibrantly clear holographic projections.</li>
+                        <li><strong>AI-Driven Emotional & Behavioral Response:</strong> AI engineered to learn task preferences and nuanced holographic reactions.</li>
+                        <li><strong>Rich Content Ecosystem:</strong> Vast and continuously expanding library of customizable characters and educational modules.</li>
+                    </ul>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Conclusion: Beyond a Device, A Living Presence</strong></h4>
+                    <p>AuraPlay represents more than just a smart home device; it is poised to become a living, dynamic presence meticulously designed to profoundly enrich our daily lives. By unleashing the full visual potential of AI through personalized holograms, it directly addresses fundamental human desires for connection, deeper engagement, and intuitive interaction. This concept, born from the simple limitation of a disembodied voice, possesses the transformative power to evolve houses into truly smart, truly engaging homes—creating experiences that resonate not merely in our ears, but deeply within our hearts and imaginations. This, in my estimation, marks the next profound and indispensable leap for smart home technology.</p>
+                `
+            },
+            {
+                title: "AIRPORT: \"SKYSERVE\" – BRINGING THE AIRPORT TO THE PASSENGER",
+                details: `
+                    <p>Today's airport experience, despite its modern amenities, often involves significant stress. The fundamental concept is to create "SkyServe," an innovative, within-airport delivery application. This app is designed to bring the vast array of airport retail, food, and beverage options directly to the passenger, no matter where they are in the terminal. It transforms the airport from a physically demanding and often overpriced shopping and dining environment into a comfortable, convenient, and value-driven hub, accessible to everyone.</p>
+                    <p>For this product, it's not just a convenience; it's a fundamental reimagining of the airport passenger journey, ensuring that every traveler can access what they need, when they need it, with ease and perceived fairness.</p>
+                    <h4><i class="fas fa-user-shield mr-2 text-gray-600"></i><strong>The Undeniable Value Proposition: Solving Core Passenger Pain Points</strong></h4>
+                    <p>The airport experience is fraught with common frustrations, and "SkyServe" directly targets these:</p>
+                    <ul>
+                        <li><strong>Physical Exertion & Accessibility:</strong> Eliminates extensive walking, bringing items directly to the passenger.</li>
+                        <li><strong>Time Sensitivity:</strong> Allows placing orders while waiting, maximizing relaxation time.</li>
+                        <li><strong>Perceived Overpricing:</strong> Introduces competitive dynamics through promotions, discounts, and transparency.</li>
+                        <li><strong>Stress Reduction:</strong> Significantly reduces stress through seamless, on-demand service.</li>
+                        <li><strong>Enhanced Retail & F&B Discoverability:</strong> Serves as a comprehensive digital directory for all options.</li>
+                    </ul>
+                    <h4><i class="fas fa-tools mr-2 text-gray-600"></i><strong>How "SkyServe" Works: The Solutions</strong></h4>
+                    <h4><i class="fas fa-shopping-bag mr-2 text-gray-600"></i><strong>1. Seamless Ordering & Delivery Experience:</strong></h4>
+                    <ul>
+                        <li><strong>Geo-fenced Zones & Smart Routing:</strong> Detects user location and displays available vendors for delivery.</li>
+                        <li><strong>Comprehensive Digital Marketplace:</strong> Visually appealing interface to browse menus and product catalogs.</li>
+                        <li><strong>Personalized Recommendations:</strong> AI-driven suggestions based on flight time and preferences.</li>
+                        <li><strong>Multiple Order Types:</strong> On-Demand Delivery, Scheduled Delivery, and Pickup at Store.</li>
+                        <li><strong>Secure Payment Gateway:</strong> Supports multiple payment options.</li>
+                    </ul>
+                    <h4><i class="fas fa-percent mr-2 text-gray-600"></i><strong>2. Unlocking Value & Deals:</strong></h4>
+                    <ul>
+                        <li><strong>Exclusive App-Only Offers:</strong> Special discounts and combo deals for app users.</li>
+                        <li><strong>Flash Sales & Time-Sensitive Deals:</strong> Stimulates demand and manages inventory.</li>
+                        <li><strong>Loyalty & Rewards Program:</strong> Universal airport loyalty program integrated into "SkyServe."</li>
+                        <li><strong>Price Transparency:</strong> Highlights best value options and discounts.</li>
+                        <li><strong>Subscription Model (for frequent flyers):</strong> Premium subscription for free delivery or enhanced discounts.</li>
+                    </ul>
+                    <h4><i class="fas fa-calculator mr-2 text-gray-600"></i><strong>Guesstimate: Daily Orders via "SkyServe" at a Major Indian Airport</strong></h4>
+                    <p>Let's guesstimate the potential daily orders for "SkyServe" at a major Indian airport like Delhi (DEL) or Mumbai (BOM).</p>
+                    <ul>
+                        <li><strong>Average Daily Passenger Footfall:</strong> An estimate is around 175,000 passengers per day.</li>
+                        <li><strong>Smartphone Penetration:</strong> Let's assume 90% of these passengers have smartphones. That's 175,000 * 0.90 = 157,500 potential app users.</li>
+                        <li><strong>App Download/Adoption Rate:</strong> An initial assumption is that 10% of these passengers download and try the app in the first year. That's 157,500 * 0.10 = 15,750 app users per day.</li>
+                        <li><strong>Conversion Rate (Placing an Order):</strong> Not everyone who downloads will order. A conversion rate of 15% is assumed, given the specific pain points addressed and attractive offers. That's 15,750 * 0.15 = 2,362.5 orders per day.</li>
+                    </ul>
+                    <p>So, "SkyServe" could facilitate approximately <strong>2,400 orders per day</strong> at a major Indian airport. This highlights a substantial revenue opportunity and significant value for passengers.</p>
+                    <h4><i class="fas fa-chart-area mr-2 text-gray-600"></i><strong>Go-to-Market Strategy:</strong></h4>
+                    <ul>
+                        <li><strong>Phase 1: Pilot Program & Vendor Onboarding (Strategic Partnerships).</strong> Initially at one major Indian airport to refine operations.</li>
+                        <li><strong>Phase 2: Public Launch & User Acquisition.</strong> Market heavily within the pilot airport, focusing on key benefits.</li>
+                        <li><strong>Phase 3: Scale & Expand.</strong> Rapid onboarding of more F&B and retail outlets, then expansion to other airports.</li>
+                    </ul>
+                    <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
+                    <p>"SkyServe" is more than just a delivery app; it's a strategic intervention to humanize and optimize the airport experience. By directly addressing the common pain points of physical exertion, time pressure, and perceived overpricing, it creates a more inclusive, comfortable, and value-driven environment for all passengers. This approach aims to unlock new revenue streams for airport businesses through enhanced discoverability and targeted promotions, while simultaneously elevating customer satisfaction, making it a truly compelling and revolutionary concept for the modern airport.</p>
+                `
+            },
+            {
+                title: "OPTIMIZING PRODUCTION & CLIENT SOLUTIONS AT TECH BROTHERS PVT. LTD.",
+                details: `
+                    <h4><i class="fas fa-briefcase mr-2 text-gray-600"></i><strong>PROBLEM/GOAL:</strong> Improve production efficiency and client satisfaction through tailored software solutions.</h4>
+                    <h4><i class="fas fa-user-tie mr-2 text-gray-600"></i><strong>MY ROLE:</strong> Software Engineer Intern</h4>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>SOLUTION/APPROACH:</strong></h4>
+                    <ul>
+                        <li>Collaborated with senior managers to design product improvement strategies.</li>
+                        <li>Developed tailored software solutions based on direct client communication.</li>
+                    </ul>
+                    <h4><i class="fas fa-trophy mr-2 text-gray-600"></i><strong>KEY ACHIEVEMENTS:</strong></h4>
+                    <ul>
+                        <li>Presented findings to stakeholders improving production times by <strong>15%</strong> and generating cost savings.</li>
+                        <li>Directly communicated with international clients to understand pain points and develop tailored software solutions, enhancing user satisfaction.</li>
+                        <li>Innovated features and aligned roadmaps with customer needs through collaboration with senior managers.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "UNRAVELING THE TWITTERSPHERE: INTERACTIVE SENTIMENT ANALYSIS DASHBOARD",
+                details: `
+                    <h4><i class="fas fa-chart-bar mr-2 text-gray-600"></i><strong>PROBLEM/GOAL:</strong> Enable quicker decision-making through real-time social media sentiment analysis.</h4>
+                    <h4><i class="fas fa-user-tie mr-2 text-gray-600"></i><strong>MY ROLE:</strong> Developer (College Project)</h4>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>SOLUTION/APPROACH:</strong></h4>
+                    <ul>
+                        <li>Developed an interactive Twitter sentiment analysis dashboard.</li>
+                        <li>Led data collection and analysis to provide actionable insights for stakeholders, supporting data-driven strategy formulation.</li>
+                    </ul>
+                    <h4><i class="fas fa-trophy mr-2 text-gray-600"></i><strong>KEY ACHIEVEMENTS:</strong></li>
+                        <li>Accelerated decision-making by <strong>20%</strong> by providing an interactive sentiment analysis dashboard.</li>
+                        <li>Supported data-driven strategy formulation with actionable insights.</li>
+                    </ul>
+                `
+            },
+            {
+                title: "VIRTUAL BUDDY: VOICE-BASED CHATBOT FOR ENHANCED USER SUPPORT",
+                details: `
+                    <h4><i class="fas fa-comments mr-2 text-gray-600"></i><strong>PROBLEM/GOAL:</strong> Provide efficient and accessible user support through an intelligent chatbot.</h4>
+                    <h4><i class="fas fa-user-tie mr-2 text-gray-600"></i><strong>MY ROLE:</strong> Team Lead and Core Developer (College Project)</h4>
+                    <h4><i class="fas fa-lightbulb mr-2 text-gray-600"></i><strong>SOLUTION/APPROACH:</strong></h4>
+                    <ul>
+                        <li>Directed the development of a voice-based chatbot using advanced technologies (NLP, APIs, AI, and ML).</li>
+                        <li>Spearheaded project strategy and execution, implementing agile principles for on-time delivery and user alignment.</li>
+                    </ul>
+                    <h4><i class="fas fa-trophy mr-2 text-gray-600"></i><strong>KEY ACHIEVEMENTS:</strong></li>
+                        <li>Served over <strong>150 users</strong> with a <strong>90% success rate</strong> in query resolution.</li>
+                        <li>Ensured on-time delivery and user alignment by spearheading project strategy and execution.</li>
+                    </ul>
+                `
+            }
+        ];
+
+
+        // Function to close mobile menu
+        function closeMobileMenu() {
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = ''; // Re-enable scrolling
+        }
+
+        // Add click event listeners for smooth scrolling
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+                const targetId = this.getAttribute('href').substring(1); // Get the target section ID
+                const targetSection = document.getElementById(targetId);
+
+                if (targetSection) {
+                    // Scroll to the target section smoothly
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Close mobile menu if open
+                closeMobileMenu();
+            });
+        });
+
+        // Toggle mobile menu visibility
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Disable scrolling on body when menu is open
+        });
+
+        // Close mobile menu
+        closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+
+        // Close mobile menu when a link inside it is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Optional: Highlight active navigation link based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 70; // Adjust for fixed header height
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Ensure smooth scroll on initial load if URL has a hash
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+
+        // Modal functionality for Case Studies
+        const readMoreLinks = document.querySelectorAll('.case-study-read-more');
+
+        readMoreLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link behavior
+                // Use e.currentTarget to get the element the event listener was attached to (the <a> tag)
+                const caseStudyId = parseInt(e.currentTarget.dataset.caseStudyId);
+                const data = caseStudyDetails[caseStudyId];
+
+                if (data) {
+                    modalCaseStudyTitle.textContent = data.title;
+                    modalCaseStudyDetails.innerHTML = data.details;
+                    caseStudyModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Disable body scroll
+                }
+            });
+        });
+
+        modalCloseButton.addEventListener('click', () => {
+            caseStudyModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Re-enable body scroll
+        });
+
+        // Close modal if clicked outside content
+        caseStudyModal.addEventListener('click', (e) => {
+            if (e.target === caseStudyModal) {
+                caseStudyModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</body>
+</html>
