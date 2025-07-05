@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labhanshu Vyas - Product Manager Portfolio</title>
+    <!-- Load Tailwind CSS from CDN for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Playfair Display for headings, Lora for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlalDLrAzCgQxsqwJ9C02dFjRzC/oH5lU4lF6f2M9iB2rJ6t+4cQf1x3R2i2fM8E/V9p3/8V8+5x+6Ww==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* Apply Lora font for body text, Playfair Display for headings */
@@ -325,7 +328,7 @@
 
         /* Stylish about-me blocks */
         .about-me-story, .about-me-block {
-            background-color: #ffffff; /* White background */
+            background-color: #ffffff;
             padding: 2.5rem;
             border-radius: 0.75rem; /* More rounded corners */
             box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More prominent shadow */
@@ -424,7 +427,7 @@
             width: 80px; /* Reverted size */
             height: 80px; /* Reverted size */
             margin-bottom: -3rem; /* No margin-bottom on icon */
-            margin-top: 0rem; /* Pushed further up to create more space from top of box */
+            margin-top: 0; /* Pushed further up to create more space from top of box */
         }
 
         #why-me-text {
@@ -433,7 +436,7 @@
             max-width: 800px; /* Max width for readability */
             margin-left: auto;
             margin-right: auto;
-            margin-top: 0rem; /* Adjusted margin-top to push text further from icon */
+            margin-top: 1rem; /* Adjusted margin-top to push text further from icon */
         }
 
         /* Home Section Styling */
@@ -516,8 +519,10 @@
 </head>
 <body class="antialiased">
 
+    <!-- Navigation Bar -->
     <header class="bg-white shadow-sm py-4 fixed w-full z-10 top-0 border-b border-gray-100">
         <nav class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
+            <!-- Updated Portfolio Title on the left -->
             <a href="#home" class="text-2xl font-bold text-gray-900 rounded-lg p-2 uppercase tracking-wide">PORTFOLIO</a>
             <ul class="hidden md:flex space-x-6">
                 <li><a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">ABOUT ME</a></li>
@@ -526,12 +531,14 @@
                 <li><a href="#skills" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">SKILLS</a></li>
                 <li><a href="#why-me" class="nav-link text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200 uppercase text-sm tracking-wide">WHY ME?</a></li>
             </ul>
+            <!-- Mobile Menu Button (Hamburger Icon) -->
             <button id="mobile-menu-button" class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
+        <!-- Mobile Menu Overlay -->
         <div id="mobile-menu-overlay" class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-20">
             <div class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-6">
                 <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-700 hover:text-gray-900 focus:outline-none">
@@ -551,22 +558,29 @@
     </header>
 
     <main class="pt-16">
-        <section id="home" class="text-gray-900 flex flex-col md:flex-row items-center justify-center py-16 px-4 text-center md:text-left bg-[#FFFFFF]"> <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl">
+        <!-- Home Section -->
+        <section id="home" class="text-gray-900 flex flex-col md:flex-row items-center justify-center py-16 px-4 text-center md:text-left bg-[#FFFFFF]"> <!-- Background changed to white -->
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl">
+                <!-- Image on left, no shadow/border, larger -->
                 <div class="flex-shrink-0 mb-8 md:mb-0 md:mr-12">
                     <img src="https://storiesonboard.com/blog/wp-content/uploads/2022/09/remote-product-manager-1.png"
                          onerror="this.onerror=null;this.src='https://placehold.co/256x256/FFFFFF/3D3B40?text=Product+Manager';"
                          alt="Illustration of a product manager working at a desk with various digital interfaces"
-                         class="w-64 h-64 object-cover"> </div>
-                <div class="max-w-2xl text-left"> <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-2">
+                         class="w-64 h-64 object-cover"> <!-- Resized to 16rem x 16rem -->
+                </div>
+                <!-- Text content, aligned to left -->
+                <div class="max-w-2xl text-left"> <!-- text-left to align content to the left -->
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-2">
                         Hi!
                     </h1>
                     <h2 class="text-3xl md:text-4xl font-normal mb-6">
                         I'm Labhanshu Vyas
                     </h2>
                     <p class="text-lg md:text-xl mb-8">
-                         A passionate and well‑rounded creator — an engineer, sports enthusiast, and lifelong learner — always looking for ways to connect ideas, people, and technology to build things that matter.
+                        Product thinker, technologist, and lifelong learner — passionate about connecting people, ideas, and technology to solve meaningful problems. Versatile and driven, I’m crafting my journey toward impactful product management.
                     </p>
-                    <a href="#about" class="home-explore-button"> Explore Portfolio
+                    <a href="#about" class="home-explore-button"> <!-- Redirected to About Me section -->
+                        Explore Portfolio
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
@@ -575,21 +589,29 @@
             </div>
         </section>
 
+        <!-- About Me Section -->
         <section id="about" class="bg-white py-16 px-4 border-t border-b border-gray-100">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">ABOUT ME</h2>
 
                 <div class="about-me-grid">
+                    <!-- About Me Paragraph / My Story -->
                     <div class="about-me-story">
-                        <p id="about-me-text" class="text-gray-700 leading-relaxed text-left mb-4"> I’m someone who believes every experience is an opportunity to learn and grow. From leading a national‑level netball team to working on complex engineering projects, I’ve embraced challenges that shaped who I am today — a passionate and adaptable person with a strong sense of teamwork, discipline, and creativity.
+                        <!-- Removed 'MY STORY' heading -->
+                        <p id="about-me-text" class="text-gray-700 leading-relaxed text-left mb-4"> <!-- Adjusted margin-bottom -->
+                            I’m someone who sees every experience — from sports competitions to technical projects — as a chance to learn, grow, and connect ideas in new ways.
 
-With a background in Information Technology, I’ve built a solid technical foundation in programming, data analysis, and project management. But beyond the code, I’ve always been driven by understanding people, tackling meaningful problems, and creating products that make a difference.
+With a B.Tech in Information Technology, my skills span Python, C++, data analysis, and project management. I’ve built products like a voice-based chatbot and a Twitter sentiment analysis dashboard, and contributed to real-world solutions during my internship. But beyond code, I’m driven by curiosity and the desire to create products that make life simpler, smarter, and more human.
 
-Throughout my journey — be it as a student leading projects like a voice‑based chatbot or as an intern presenting results that improved production efficiency — I’ve learned the value of connecting ideas across disciplines. Helping teammates, sharing knowledge, and tackling tough questions have shaped me into a collaborative and resourceful problem‑solver.
+As a national-level netball player and sports captain, I learned resilience, strategic thinking, and the art of inspiring a team. My involvement in case studies, volunteering, and public speaking further shaped my ability to collaborate, communicate, and solve problems creatively.
 
-My interests range from sports and volunteering to case studies that explore user pain points, marketing strategies, and making technology more accessible for all. This diverse lens gives me a well‑rounded approach to life and work — one that blends technical precision with an understanding of people and an eagerness to create impactful, human‑centric products.
+My goal: to become a Product Manager who blends technical depth with empathy for users, translating insights into impactful products. For now, I’m open to roles in APM programs, software development, data analysis, or product research — any opportunity that lets me wear multiple hats, build skills, and deliver value.
+
+I believe great products — and careers — are built iteratively. This portfolio is one way I’m sharing my journey, my learnings, and the unique perspective I bring.
                         </p>
-                        <div class="text-left mt-6"> <a href="https://drive.google.com/file/d/1SNqq8jiWTsNaghy0_v4Cm6pND3PEhjf4/view?usp=sharing" download class="download-cv-button">
+                        <!-- Download CV Button repositioned -->
+                        <div class="text-left mt-6"> <!-- Adjusted margin-top for spacing -->
+                            <a href="https://drive.google.com/file/d/1i8TG8xVcwnR29absIWNe9p_F6oPqcMiB/view?usp=sharing" download class="download-cv-button">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                 </svg>
@@ -598,6 +620,7 @@ My interests range from sports and volunteering to case studies that explore use
                         </div>
                     </div>
 
+                    <!-- Education & Certificates Blocks -->
                     <div class="about-me-secondary-blocks">
                         <div class="about-me-block">
                             <h3 class="text-2xl font-semibold text-gray-900 mb-4">EDUCATION</h3>
@@ -607,106 +630,129 @@ My interests range from sports and volunteering to case studies that explore use
                                 <li>CGPA – 8.28/10</li>
                             </ul>
                         </div>
-                        <div class="about-me-block"> <h3 class="2xl font-semibold text-gray-900 mb-4">CERTIFICATES</h3>
-                            <ul class="list-disc list-inside text-gray-700 space-y-2"> <li class="flex items-center"><i class="fas fa-award w-5 h-5 mr-2 text-gray-600"></i>Google Project Management: Professional Certificate</li>
-                                <li class="flex items-center"><i class="fas fa-cloud w-5 h-5 mr-2 text-gray-600"></i>AWS Academy Cloud Foundation</li> </ul>
+                        <div class="about-me-block"> <!-- Removed mt-4, now spacing handled by flex gap -->
+                            <h3 class="2xl font-semibold text-gray-900 mb-4">CERTIFICATES</h3>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2"> <!-- Corrected indentation with list-disc and list-inside -->
+                                <li class="flex items-center"><i class="fas fa-award w-5 h-5 mr-2 text-gray-600"></i>Google Project Management: Professional Certificate</li>
+                                <li class="flex items-center"><i class="fas fa-cloud w-5 h-5 mr-2 text-gray-600"></i>AWS Academy Cloud Foundation</li> <!-- Changed icon to fa-cloud -->
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="case-studies" class="py-16 px-0 md:px-0 bg-[#EEE8DF]"> <div class="container mx-auto px-4 mb-12 max-w-6xl">
+        <!-- Case Studies Section -->
+        <section id="case-studies" class="py-16 px-0 md:px-0 bg-[#EEE8DF]"> <!-- Updated background color to #EEE8DF -->
+            <div class="container mx-auto px-4 mb-12 max-w-6xl">
                 <h2 class="text-4xl font-bold text-gray-900 mb-12 uppercase tracking-wide text-center">CASE STUDIES</h2>
             </div>
 
-            <div class="horizontal-scroll-container px-4 sm:px-6 md:px-8 lg:px-10"> <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="0"> <img src="https://tinuiti.com/wp-content/uploads/2023/12/td-amazon-smile-logo-01-large.jpg"
+            <!-- Horizontal scroll container for case study items -->
+            <div class="horizontal-scroll-container px-4 sm:px-6 md:px-8 lg:px-10"> <!-- Removed custom left/right padding here, relying on section padding -->
+                <!-- Case Study 0: Amazon -->
+                <div class="case-study-item">
+                    <a href="#" class="case-study-trigger" data-case-study-id="0"> <!-- Image now clickable -->
+                        <img src="https://tinuiti.com/wp-content/uploads/2023/12/td-amazon-smile-logo-01-large.jpg"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=AMAZON+CASE+STUDY';"
                              alt="Amazon case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">AMAZON: NEW PRODUCT RECOMMENDATION CAROUSEL</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        Strategizing the launch of a new product recommendation carousel and <strong>AI-powered marketing for Amazon.</strong>
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Strategizing an AI-powered product recommendation carousel for Amazon to enhance discovery, boost conversion, and increase average order value.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="0">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="0">Read more...</a>
                 </div>
 
+                <!-- Case Study 1: G-maps -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="1"> <img src="https://i.ytimg.com/vi/ZG4JQX4BO9A/maxresdefault.jpg"
+                    <a href="#" class="case-study-trigger" data-case-study-id="1"> <!-- Image now clickable -->
+                        <img src="https://i.ytimg.com/vi/ZG4JQX4BO9A/maxresdefault.jpg"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=G-MAPS+CASE+STUDY';"
                              alt="G-maps case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">G-MAPS: ROAD SAFETY & AWARENESS</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        Enhancing Road Safety and Awareness with Immersive Navigation.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Enhancing G-Maps with immersive AR/VR navigation and AI-powered safety alerts to provide drivers with unparalleled road awareness and confidence.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="1">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="1">Read more...</a>
                 </div>
 
+                <!-- Case Study 2: YouTube -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="2"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfPimrl1lwgrW3OHOuuyReVPqtc_Hd7mp4A&s"
+                    <a href="#" class="case-study-trigger" data-case-study-id="2"> <!-- Image now clickable -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKfPimrl1lwgrW3OHOuuyReVPqtc_Hd7mp4A&s"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=YOUTUBE+CASE+STUDY';"
                              alt="YouTube case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">YOUTUBE: RECOMMENDATION ALGORITHM</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        Metrics to determine the effectiveness of YouTube's recommendation algorithm.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Defining key metrics to measure and optimize the effectiveness of YouTube's recommendation algorithm, focusing on user engagement, satisfaction, and content diversity.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="2">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="2">Read more...</a>
                 </div>
 
+                <!-- Case Study 3: Netflix -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="3"> <img src="https://i.ytimg.com/vi/GV3HUDMQ-F8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBDX0meXWntQams20Wn3jArUnablg"
+                    <a href="#" class="case-study-trigger" data-case-study-id="3"> <!-- Image now clickable -->
+                        <img src="https://i.ytimg.com/vi/GV3HUDMQ-F8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBDX0meXWntQams20Wn3jArUnablg"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=NETFLIX+CASE+STUDY';"
                              alt="Netflix case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">NETFLIX DATA CONSUMPTION</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        A guesstimate of daily data consumed by Netflix users worldwide.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        A detailed guesstimate of the massive daily data consumption by Netflix users worldwide, breaking down complex figures into understandable components.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="3">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="3">Read more...</a>
                 </div>
 
+                <!-- Case Study 4: Kitchen -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="4"> <img src="https://swarajya.gumlet.io/swarajya/2023-01/8b1231a8-6d28-4c7d-92ee-f0c4faebf5e9/Photo_1__Title_image__Connected__smart_kitchen_of_the_future__Photo_Credit__Ken_Research.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
+                    <a href="#" class="case-study-trigger" data-case-study-id="4"> <!-- Image now clickable -->
+                        <img src="https://swarajya.gumlet.io/swarajya/2023-01/8b1231a8-6d28-4c7d-92ee-f0c4faebf5e9/Photo_1__Title_image__Connected__smart_kitchen_of_the_future__Photo_Credit__Ken_Research.jpg?w=1200&h=675&auto=format%2Ccompress&fit=max&enlarge=true"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=KITCHEN+CASE+STUDY';"
                              alt="Kitchen case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">KITCHEN: KITCHEN-GENIE</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        Your Intelligent Kitchen Companion for meal inspiration, inventory, and smart shopping.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Introducing "Kitchen-Genie," an intelligent kitchen companion designed to eliminate meal planning stress, reduce food waste, and streamline inventory management with AI-powered features.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="4">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="4">Read more...</a>
                 </div>
 
+                <!-- Case Study 5: Alexa -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="5"> <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/27/4b/e2274ba5-1e24-fb59-4332-9ca08a94d358/AppIconRelease-0-1x_U007epad-0-0-0-10-0-0-0-85-220-0.png/1200x630wa.png"
+                    <a href="#" class="case-study-trigger" data-case-study-id="5"> <!-- Image now clickable -->
+                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/27/4b/e2274ba5-1e24-fb59-4332-9ca08a94d358/AppIconRelease-0-1x_U007epad-0-0-0-10-0-0-0-85-220-0.png/1200x630wa.png"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=ALEXA+CASE+STUDY';"
                              alt="Alexa case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">ALEXA: AURAPLAY</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        Redefining Smart Home Interaction with Personalized Holographic Companions.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Revolutionizing smart home interaction by transforming Alexa into a personalized holographic companion, enhancing engagement and accessibility through multi-sensory design.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="5">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="5">Read more...</a>
                 </div>
 
+                <!-- Case Study 6: Airport -->
                 <div class="case-study-item">
-                    <a href="#" class="case-study-read-more" data-case-study-id="6"> <img src="https://www.shutterstock.com/image-illustration/empty-airport-terminal-lounge-airplane-600nw-758602234.jpg"
+                    <a href="#" class="case-study-trigger" data-case-study-id="6"> <!-- Image now clickable -->
+                        <img src="https://www.shutterstock.com/image-illustration/empty-airport-terminal-lounge-airplane-600nw-758602234.jpg"
                              onerror="this.onerror=null;this.src='https://placehold.co/14remx20rem/EFEAE4/3D3B40?text=AIRPORT+CASE+STUDY';"
                              alt="Airport case study image" class="rounded-sm mb-6 mx-auto">
                     </a>
                     <h3 class="text-xl font-semibold text-gray-900 mb-2 uppercase">AIRPORT: SKYSERVE</h3>
-                    <p class="text-gray-700 mb-4 text-sm">
-                        "SkyServe" – an innovative, within-airport delivery application bringing retail, food, and beverage directly to passengers.
+                    <p class="text-gray-700 mb-4 text-sm text-left">
+                        Introducing "SkyServe," an innovative in-airport delivery app designed to eliminate passenger stress and inconvenience by bringing retail and F&B directly to them.
                     </p>
-                    <a href="#" class="case-study-read-more" data-case-study-id="6">Read more...</a>
+                    <a href="#" class="case-study-trigger" data-case-study-id="6">Read more...</a>
                 </div>
             </div>
         </section>
 
-        <section id="my-work" class="bg-[#F5F5F5] py-16 px-4 border-t border-b border-gray-200"> <div class="container mx-auto max-w-6xl">
+        <!-- My Work Section -->
+        <section id="my-work" class="bg-[#F5F5F5] py-16 px-4 border-t border-b border-gray-200"> <!-- Reverted to light neutral gray -->
+            <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">MY WORK</h2>
 
                 <div class="grid grid-cols-1 gap-8">
@@ -744,6 +790,7 @@ My interests range from sports and volunteering to case studies that explore use
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="bg-white py-16 px-4 border-b border-gray-100">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl font-bold text-center text-gray-900 mb-12 uppercase tracking-wide">SKILLS</h2>
@@ -822,21 +869,45 @@ My interests range from sports and volunteering to case studies that explore use
             </div>
         </section>
 
-        <section id="why-me" class="py-16 px-4 bg-[#EEE8DF]"> <div class="container mx-auto max-w-6xl">
+        <!-- Why Me? Section -->
+        <section id="why-me" class="py-16 px-4 bg-[#EEE8DF]"> <!-- Updated background color to #EEE8DF -->
+            <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl font-bold text-gray-900 mb-12 uppercase tracking-wide text-center">WHY ME?</h2>
                 <div class="card mx-auto max-w-4xl">
                     <div class="flex flex-col items-center justify-center">
-                        <i class="fa-solid fa-handshake-angle w-20 h-20 text-[#1A1A1A] mt-0 mb-0"></i> <p id="why-me-text" class="text-gray-700 leading-relaxed text-center mt-4"> I’m not just an engineer or a product enthusiast — I’m a person who finds joy in connecting ideas, learning from every experience, and tackling challenges head‑on. Leading a sports team taught me resilience, discipline, and how to motivate people toward a common goal. Working on internships and projects taught me the value of clear communication, technical precision, and focusing on the ‘why’ behind every feature.
-
-From understanding user pain points and creating case studies, to presenting to stakeholders and volunteers, I’ve embraced a range of roles that shaped a holistic approach to problem‑solving. I am passionate about making things that matter, connecting with people, and using my skills and experience to contribute to teams that value collaboration, innovation, and making an impact.
-
-If you’re looking for someone who is genuine, adaptable, and excited to create, learn, and grow every step of the way — I’m ready to contribute.
+                        <i class="fa-solid fa-handshake-angle w-20 h-20 text-[#1A1A1A] mt-0 mb-0"></i> <!-- Adjusted margin-top and margin-bottom to pull icon closer to top and away from text -->
+                        <p class="text-gray-700 leading-relaxed text-center mb-6">
+                            I’m not just an engineer or a product enthusiast — I’m a person who finds joy in connecting ideas, learning from every experience, and tackling challenges head‑on.
+                        </p>
+                        <ul class="text-gray-700 leading-relaxed text-left space-y-4 w-full">
+                            <li class="flex items-start">
+                                <i class="fas fa-code w-6 h-6 mr-3 mt-1 text-gray-700 flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-lg text-gray-900">Technically Grounded & Data-Driven:</strong> My background in Information Technology and hands-on skills in Python, C++, SQL, and data analysis empower me to translate complex technical challenges into solutions that make sense for users and businesses alike. I’m driven by data, but always keep the human side of the problem in focus, ensuring that products aren’t just built — they’re built right.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users-cog w-6 h-6 mr-3 mt-1 text-gray-700 flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-lg text-gray-900">User-Centric Problem Solver with Proven Leadership:</strong> Whether leading my national-level netball team or spearheading projects like a voice-based chatbot that served 150+ users with a 90% success rate, I’ve learned how to bring people together, define clear goals, and deliver impactful results. I love diving into user pain points and transforming insights into intuitive, meaningful experiences.
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hat-cowboy w-6 h-6 mr-3 mt-1 text-gray-700 flex-shrink-0"></i>
+                                <div>
+                                    <strong class="text-lg text-gray-900">Adaptable, Curious, and Collaborative:</strong> I thrive on learning new things and wearing multiple hats — from coding, to analyzing markets, to presenting solutions to diverse audiences. My experiences across sports, volunteering, case studies, and technical projects have shaped me into a versatile generalist who’s comfortable navigating ambiguity, building trust, and driving progress in cross-functional teams.
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="text-gray-700 leading-relaxed text-center mt-6">
+                            I believe my unique blend of technical depth, user empathy, leadership experience, and genuine curiosity sets me apart. I’m eager to contribute these strengths to dynamic organizations, learn from great teams, and help create products that truly make a difference.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Thank You / Contact Section -->
         <section id="contact" class="bg-black text-white py-16 px-4 text-center">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="text-4xl font-bold mb-8 uppercase tracking-wide">THANK YOU!</h2>
@@ -847,26 +918,31 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                 <div class="flex flex-col items-center justify-center space-y-4">
                     <p class="text-xl font-semibold uppercase">LABHANSHU VYAS</p>
                     <p class="text-lg flex items-center">
-                        <i class="fas fa-envelope w-5 h-5 mr-2"></i> <a href="mailto:labhanshuvyas21@gmail.com" class="hover:underline">labhanshuvyas21@gmail.com</a>
+                        <i class="fas fa-envelope w-5 h-5 mr-2"></i> <!-- Email icon added -->
+                        <a href="mailto:labhanshuvyas21@gmail.com" class="hover:underline">labhanshuvyas21@gmail.com</a>
                     </p>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-3 text-center text-sm">
         <p>&copy; 2024 Labhanshu Vyas. All rights reserved.</p>
     </footer>
 
+    <!-- Modal for Case Study Details -->
     <div id="case-study-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <button class="modal-close-button">&times;</button>
             <h3 id="modal-case-study-title" class="text-2xl font-semibold text-gray-900 mb-4 uppercase"></h3>
             <div id="modal-case-study-details" class="text-gray-700 leading-relaxed space-y-4">
-                </div>
+                <!-- Detailed content will be injected here -->
+            </div>
         </div>
     </div>
 
+    <!-- JavaScript for smooth scrolling, mobile menu, and modal functionality -->
     <script>
         // Get all navigation links
         const navLinks = document.querySelectorAll('nav a');
@@ -1032,7 +1108,7 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                         <li><strong>"Comfort Route" Optimization:</strong> A truly empathetic routing option that prioritizes smoother roads, even if slightly longer. This leverages granular road quality data (from crowdsourcing, sensor data, and municipal surveys) to calculate a "comfort score" for routes, specifically benefiting patients, pregnant women, and those prone to back pain.</li>
                     </ul>
                     <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
-                    <p>Google Maps possesses an extraordinary potential to move beyond a mere navigation tool to become a comprehensive guardian of safety and comfort on the road. By proactively alerting drivers to hazards and danger zones through the intelligent "SafePath AI" and revolutionizing navigation with the immersive "VisionDrive" AR/VR experience, this vision can profoundly enhance user confidence and well-being. This holistic product vision encapsulates both ambitious innovation and practical, impactful implementation, setting the stage for a new era of mindful and secure travel.</p>
+                    <p>Google Maps possesses an extraordinary potential to move beyond a mere navigation tool to become a comprehensive guardian of safety and comfort on the road. By proactively alerting drivers to hazards and danger zones through the intelligent "SafePath AI" and revolutionizing navigation with the immersive "VisionDrive" AR/VR experience, this vision can profoundly enhance user confidence and well-being. The proposed alternative, "RoadSense," further demonstrates a pragmatic pathway to achieve similar safety and comfort benefits by leveraging Google's inherent strengths in data and community. This holistic product vision encapsulates both ambitious innovation and practical, impactful implementation, setting the stage for a new era of mindful and secure travel.</p>
                 `
             },
             {
@@ -1041,9 +1117,6 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                     <p>As the PM for YouTube's recommendation algorithm, what metrics would you use to determine its effectiveness?</p>
                     <h4><i class="fas fa-star mr-2 text-gray-600"></i><strong>The Main Goal of YouTube's Recommendation Algorithm</strong></h4>
                     <p>At its core, the YouTube recommendation algorithm has a huge job: to keep users engaged with content they love, help them discover new things, and ultimately maximize the time they spend on the platform. If we do that well, everything else – like ad revenue and creator success – naturally follows.</p>
-                    <h4><i class="fas fa-chart-line mr-2 text-gray-600"></i><strong>Key Metrics We'd Use to Measure Effectiveness</strong></h4>
-                    <p>I'd break down our metrics into a few important categories:</p>
-                    <h4><i class="fas fa-users mr-2 text-gray-600"></i><strong>1. Engagement Metrics: Are Users Watching More?</strong></h4>
                     <ul>
                         <li><strong>Total Watch Time:</strong> This is probably the most critical metric. Are users spending more minutes watching videos because of our recommendations? This could be daily, weekly, or per session. If watch time goes up, our algorithm is likely doing a good job.</li>
                         <li><strong>Session Length:</strong> Are recommendations helping users stay on YouTube for longer stretches? We'd look at the average duration of a user's viewing session when they come from a recommended video.</li>
@@ -1133,7 +1206,7 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                         <li><strong>Physical Exertion & Accessibility:</strong> Instantly suggests diverse recipes based on what's available.</li>
                         <li><strong>Time Sensitivity:</strong> Tracks expiration dates and prompts users to utilize ingredients proactively.</li>
                         <li><strong>Perceived Overpricing:</strong> Offers an extensive, constantly updated library of recipes for variety.</li>
-                        <li><strong>Stress Reduction:</strong> Significantly reduces stress through seamless, on-demand service.</li>
+                        <li><strong>Stress Reduction:</strong> Provides intuitive, automated inventory management.</li>
                         <li><strong>Enhanced Retail & F&B Discoverability:</strong> Acts as a virtual guide for finding ingredients and utensils.</li>
                     </ul>
                     <h4><i class="fas fa-stethoscope mr-2 text-gray-600"></i><strong>Root Cause Analysis (RCA) of Kitchen Pain Points</strong></h4>
@@ -1202,7 +1275,7 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                 title: "ALEXA: AURAPLAY – REDEFINING SMART HOME INTERACTION",
                 details: `
                     <p>In the rapidly evolving landscape of smart home technology, we often find ourselves at the cusp of the next great leap. While voice assistants have fundamentally reshaped our interaction with technology, there remains a profound, unmet desire for deeper engagement and a more intuitive, multi-sensory experience. This is precisely the space where AuraPlay emerges as a revolutionary step forward.</p>
-                    <h4><i class="fas fa-volume-mute mr-2 text-gray-600"></i><strong>Limitations: Alexa as Just a Speaker</strong></h4>
+                    <h4><i class="fas fa-volume-mute mr-2 text-gray-600"></i><strong>The Inherent Limitations of the Auditory Interface: Alexa as Just a Speaker</strong></h4>
                     <p>Despite its remarkable utility, the current iteration of Alexa, confined to auditory output, faces significant challenges that limit its true potential:</p>
                     <ul>
                         <li><strong>The Lack of Visual Presence:</strong> A disembodied voice, however informative, inherently lacks the visual anchor crucial for comprehensive understanding and can feel sterile.</li>
@@ -1281,7 +1354,7 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
                         <li><strong>Phase 3: Scale & Expand.</strong> Rapid onboarding of more F&B and retail outlets, then expansion to other airports.</li>
                     </ul>
                     <h4><i class="fas fa-check-circle mr-2 text-gray-600"></i><strong>Summary</strong></h4>
-                    <p>"SkyServe" is more than just a delivery app; it's a strategic intervention to humanize and optimize the airport experience. By directly addressing the common pain points of physical exertion, time pressure, and perceived overpricing, it creates a more inclusive, comfortable, and value-driven environment for all passengers. This approach aims to unlock new revenue streams for airport businesses through enhanced discoverability and targeted promotions, while simultaneously elevating customer satisfaction, making it a truly compelling and revolutionary concept for the modern airport.</p>
+                    <p>This approach aims to unlock new revenue streams for airport businesses through enhanced discoverability and targeted promotions, while simultaneously elevating customer satisfaction, making it a truly compelling and revolutionary concept for the modern airport.</p>
                 `
             },
             {
@@ -1408,10 +1481,11 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
         });
 
         // Modal functionality for Case Studies
-        const readMoreLinks = document.querySelectorAll('.case-study-read-more');
+        // Select all elements that should trigger the modal
+        const caseStudyTriggers = document.querySelectorAll('.case-study-trigger');
 
-        readMoreLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+        caseStudyTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
                 e.preventDefault(); // Prevent default link behavior
                 // Use e.currentTarget to get the element the event listener was attached to (the <a> tag)
                 const caseStudyId = parseInt(e.currentTarget.dataset.caseStudyId);
@@ -1439,6 +1513,8 @@ If you’re looking for someone who is genuine, adaptable, and excited to create
             }
         });
     </script>
+    <!-- Include MathJax (or KaTeX) for rendering LaTeX if needed.
+         For this example, MathJax is used. You can replace with KaTeX if preferred. -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         MathJax = {
