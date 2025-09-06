@@ -17,6 +17,11 @@
             background-color: #FBF8F0; /* Very light beige, default if no section background */
             color: #3D3B40; /* Dark charcoal for primary text */
         }
+
+        .navbar {
+            z-index: 999;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif; /* Caslon #540 equivalent for headings */
         }
@@ -520,7 +525,7 @@
 <body class="antialiased">
 
     <!-- Navigation Bar -->
-    <header class="bg-white shadow-sm py-4 fixed w-full z-999 top-0 border-b border-gray-100">
+    <header class="navbar bg-white shadow-sm py-4 fixed w-full z-999 top-0 border-b border-gray-100">
         <nav class="container mx-auto px-4 flex justify-between items-center max-w-7xl">
             <!-- Updated Portfolio Title on the left -->
             <a href="#home" class="text-2xl font-bold text-gray-900 rounded-lg p-2 uppercase tracking-wide">PORTFOLIO</a>
