@@ -1,13 +1,3 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q3BHHCNT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2Q3BHHCNT7');
-</script>
-
 (function(){
   const year=document.querySelector('[data-year]'); if(year) year.textContent=new Date().getFullYear();
   const toggle=document.querySelector('.nav-toggle'), nav=document.querySelector('.nav-links');
